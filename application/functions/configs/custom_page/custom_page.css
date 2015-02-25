@@ -1,0 +1,14 @@
+.custom-page__images-box img {
+	margin-right: 5px;
+	padding: 5px;
+	border: 1px solid #e4e4e4;
+}
+
+.form-table th {
+	width: 300px !important;
+}
+
+.form-table input[type="text"],
+.form-table textarea {
+	width: 400px !important;
+}

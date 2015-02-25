@@ -1,0 +1,16 @@
+/*
+ * Import setting and foundation
+ * ----------------------------------------------------- */
+@import "settings";
+@import "../../bower_components/foundation/scss/foundation";
+
+
+/*
+ * Import modules
+ * ----------------------------------------------------- */
+@import "modules/all";
+
+/*
+ * Import partials
+ * ----------------------------------------------------- */
+@import "partials/base";

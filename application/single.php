@@ -1,8 +1,8 @@
 <?php get_header() ?>
 <?php include 'includes/topbar.php' ?>
 
-<section id="hero" class="container">
-	<img src="<?php echo get_image( 'bg@post.jpg' ) ?>" alt="Hero">
+<section id="hero" class="container" style="background-image: url(<?php echo get_image( 'bg@1.jpg' ) ?>);">
+	<!-- <img src="<?php echo get_image( 'bg@1.jpg' ) ?>" alt="Hero"> -->
 	<header class="hero__header">
 		<h1 class="hero__header-title">Notícia</h1>
 		<hr class="hero__header-divider">
@@ -10,7 +10,7 @@
 </section>
 
 <div class="posts__wrapper aside__wrapper row">
-    <div id="posts" class="large-15 columns">
+    <div id="posts" class="large-15 columns internal">
         <?php
             the_post();
             $current_post = get_post();

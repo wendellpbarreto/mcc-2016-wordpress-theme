@@ -23,7 +23,7 @@ $theme_config = array(
 			'crop' => true
 		)
 	),
-	'pages_required'		=> array(
+	'pages_required' => array(
 		array(
 			'title' => 'Home',
 			'slug' => 'home',
@@ -33,16 +33,72 @@ $theme_config = array(
 			'slug' => 'blog',
 		),
 		array(
-			'title' => 'Piscinas',
-			'slug' => 'pools',
+			'title' => 'Histórico',
+			'slug' => 'historical',
 		),
 		array(
-			'title' => 'Acessórios',
-			'slug' => 'accessories',
+			'title' => 'Histórico',
+			'slug' => 'historical',
 		),
 		array(
-			'title' => 'Monte seu orçamento',
-			'slug' => 'mount-your-budget',
-		)
+			'title' => 'Organograma',
+			'slug' => 'organogram',
+		),
+		array(
+			'title' => 'Equipe',
+			'slug' => 'team',
+		),
+		array(
+			'title' => 'Pesquisa',
+			'slug' => 'research',
+		),
+		array(
+			'title' => 'Extensão',
+			'slug' => 'extension',
+		),
+		array(
+			'title' => 'Paleontologia',
+			'slug' => 'paleontology',
+		),
+		array(
+			'title' => 'Arqueologia',
+			'slug' => 'archeology',
+		),
+		array(
+			'title' => 'Etnologia',
+			'slug' => 'Ethnology',
+		),
+		array(
+			'title' => 'Herbário',
+			'slug' => 'herbary',
+		),
+		array(
+			'title' => 'Exposições de Longa Duração',
+			'slug' => 'long-duration-expositions',
+		),
+		array(
+			'title' => 'Exposições Temporárias',
+			'slug' => 'temporary-expositions',
+		),
+		array(
+			'title' => 'Localização',
+			'slug' => 'localization',
+		),
+		array(
+			'title' => 'Agende Sua Visita',
+			'slug' => 'schedule-your-visit',
+		),
+		array(
+			'title' => 'Parque da Ciência',
+			'slug' => 'science-park',
+		),
+		array(
+			'title' => 'Centro de Documentação Veríssimo de Melo',
+			'slug' => 'documentation-center-verissimo-de-melo',
+		),
+		array(
+			'title' => 'Contato',
+			'slug' => 'contact',
+		),
 	)
 );

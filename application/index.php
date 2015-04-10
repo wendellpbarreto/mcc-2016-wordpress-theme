@@ -1,34 +1,16 @@
 <?php get_header() ?>
+<?php include 'includes/topbar.php' ?>
 
-<section id="topbar" class="container">
-	<div class="row">
-		<div class="medium-4 columns">
-            <img class="topbar__logo-img" src="http://placehold.it/200x80" alt="" data-href="<?php echo site_url() ?>"/>
-            <!-- <img class="topbar__logo-img" src="<?php echo get_assets_root_uri(); ?>/images/logo.png" alt="" data-href="<?php echo site_url() ?>"/> -->
-		</div>
-		<div class="medium-16 columns">
-			<nav class="topbar__nav">
-				<a href="<?php echo get_site_url() ?>">Início</a>
-                <a data-scroll-to="#blog">Institucional</a>
-                <a data-scroll-to="#blog">Acervo</a>
-                <a href="<?php echo get_site_url().'/blog/' ?>" class="active">Notícias</a>
-                <a href="<?php echo get_permalink( get_page_by_title( '' ) ) ?>">Visite o Museu</a>
-                <a data-scroll-to="#footer">Contato</a>
-			</nav>
-		</div>
-	</div>
-</section>
-
-<section id="hero" class="container">
-	<img src="<?php echo get_image( 'bg@post.jpg' ) ?>" alt="Hero">
+<section id="hero" class="container" style="background-image: url(<?php echo get_image( 'bg@2.jpg' ) ?>);">
+	<!-- <img src="<?php echo get_image( 'bg@2.jpg' ) ?>" alt="Hero"> -->
 	<header class="hero__header">
-		<h1 class="hero__header-title">Notícias</h1>
+		<h1 class="hero__header-title white">Notícias</h1>
 		<hr class="hero__header-divider">
 	</header>
 </section>
 
 <div class="posts__wrapper aside__wrapper row">
-    <div id="posts" class="large-15 columns">
+    <div id="posts" class="large-15 columns internal">
         <?php
         	if (have_posts()) :
         		while (have_posts()) :

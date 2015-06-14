@@ -6,6 +6,7 @@
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 	<meta name="robots" content="index,follow">
 	<meta name="viewport" content="initial-scale=1.0 maximum-scale=1.0 user-scalable=no">
+        <link rel="icon" type="image/png" href="<?php echo get_image('mcc@favicon.png') ?>">
 		<!-- meta tags -->
         <meta name="author" content="Wendell P. Barreto">
         <meta name="description" content="Museu Câmara Cascudo Website">

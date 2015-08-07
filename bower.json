@@ -1,23 +1,12 @@
 {
-  "name": "mcc-montage",
-  "version": "0.1.0",
+  "name": "mcc-theme",
+  "version": "1.0.0",
+  "homepage": "https://github.com/wendellpbarreto/mcc-theme",
   "authors": [
     "Wendell P. Barreto <wendellp.barreto@gmail.com>"
   ],
-  "description": "Museu Câmara Cascudo Website Montage",
-  "main": "Gruntfile.js",
-  "moduleType": [
-    "node"
-  ],
-  "keywords": [
-    "doutor",
-    "abdo",
-    "farret",
-    "website",
-    "montage"
-  ],
+  "main": "gulpfile.js",
   "license": "MIT",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -26,8 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "pace": "~0.5.5",
-    "foundation": "~5.3.3",
-    "gulp": "~3.8.11"
+    "foundation": "~5.5.2"
   }
 }

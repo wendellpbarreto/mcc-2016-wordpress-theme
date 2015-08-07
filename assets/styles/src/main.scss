@@ -1,9 +1,12 @@
 /*
- * Import setting and foundation
+ * Import settings
  * ----------------------------------------------------- */
 @import "settings";
-@import "../../bower_components/foundation/scss/foundation";
 
+/*
+ * Import foundation
+ * ----------------------------------------------------- */
+@import "../../bower_components/foundation/scss/foundation";
 
 /*
  * Import modules

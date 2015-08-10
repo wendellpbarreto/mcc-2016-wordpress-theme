@@ -2,7 +2,6 @@ function scrollHandler() {
   var scrollTop = $(window).scrollTop();
 
   var topbar = $('#topbar');
-  console.log("asd");
   var topbarHeight = topbar.outerHeight();
 
 	if (scrollTop > topbarHeight) {

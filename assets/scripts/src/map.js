@@ -34,7 +34,7 @@ maps = function() {
 		}
 		];
 		myOptions = {
-			zoom: 17,
+			zoom: 18,
 			center: new google.maps.LatLng(-5.803316,-35.20184),
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
 			styles: style,

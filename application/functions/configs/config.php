@@ -41,8 +41,8 @@ $theme_config = array(
 			'slug' => 'historical',
 		),
 		array(
-			'title' => 'Organograma',
-			'slug' => 'organogram',
+			'title' => 'Setores',
+			'slug' => 'sectors',
 		),
 		array(
 			'title' => 'Equipe',
@@ -81,8 +81,8 @@ $theme_config = array(
 			'slug' => 'temporary-expositions',
 		),
 		array(
-			'title' => 'Localização',
-			'slug' => 'localization',
+			'title' => 'Localização e Contato',
+			'slug' => 'contact',
 		),
 		array(
 			'title' => 'Agende Sua Visita',
@@ -95,10 +95,6 @@ $theme_config = array(
 		array(
 			'title' => 'Centro de Documentação Veríssimo de Melo',
 			'slug' => 'documentation-center-verissimo-de-melo',
-		),
-		array(
-			'title' => 'Contato',
-			'slug' => 'contact',
 		),
 	)
 );

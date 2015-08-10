@@ -4,14 +4,19 @@
  * Create custom fields
  */
 $metabox['post'] = array(
-	'id' => 'post-meta-details',
-	'title' => ' ',
-	'context' => 'normal',
-	'priority' => 'high',
-	'fields' => array(
+  'id' => 'post-meta-details',
+  'title' => 'Opcões Adicionais',
+  'context' => 'normal',
+  'priority' => 'high',
+  'fields' => array(
 		array(
-			'name' => 'Destaque',
-			'id' => 'post_featured',
+			'name' => 'Destaque Primário',
+			'id' => 'post_primary_featured',
+			'type' => 'checkbox',
+		),
+		array(
+			'name' => 'Destaque Segundário',
+			'id' => 'post_secundary_featured',
 			'type' => 'checkbox',
 		),
 	)

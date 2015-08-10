@@ -10,21 +10,21 @@
 	require 'utilities/pagination.php';
 	require 'utilities/hide_update_message.php';
 	require 'utilities/the_slug.php';
+	require 'utilities/get_attachments_from_post.php';
 
 	/**
 	 * Custom Post Types
 	 */
 	require 'post_types/post.php';
 	require 'post_types/banner.php';
-	// require 'post_types/exposition.php';
-	// require 'post_types/accessory.php';
-	// require 'post_types/product.php';
+	require 'post_types/exposition.php';
+	require 'post_types/sector.php';
 
 	/**
 	 * Custom Taxonomies
 	 */
-	require 'taxonomies/accessory_category.php';
-	require 'taxonomies/pool_category.php';
+	require 'taxonomies/exposition_category.php';
+	// require 'taxonomies/pool_category.php';
 
 	/**
 	 * Custom Pages

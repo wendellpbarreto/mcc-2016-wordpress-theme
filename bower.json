@@ -6,14 +6,10 @@
     "Wendell P. Barreto <wendellp.barreto@gmail.com>"
   ],
   "main": "gulpfile.js",
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+  "moduleType": [
+    "node"
   ],
+  "license": "MIT",
   "dependencies": {
     "foundation": "~5.5.2"
   }

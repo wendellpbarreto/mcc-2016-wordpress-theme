@@ -1,9 +1,9 @@
 <?php $slug = the_slug(false); ?>
 
-<section id="topbar" class="container">
+<section id="topbar" class="container show-for-medium-up">
 	<div class="row">
 		<div class="small-12 medium-4 columns">
-            <img class="topbar__logo-img" src="<?php echo get_image('mcc@logo.png') ?>" alt="" data-href="<?php echo get_permalink( get_page_by_path( 'home' ) ) ?>"/>
+            <img class="topbar__logo-img" src="<?php echo get_image('mcc@logo.png') ?>" alt="" data-href="<?php echo get_site_url() ?>"/>
 		</div>
 		<div class="medium-16 columns">
 			<ul class="topbar__nav">
@@ -19,7 +19,8 @@
 			                <a href="<?php echo get_permalink( get_page_by_path( 'historical' ) ) ?>">Histórico</a>
 			            </li>
 			            <li>
-			                <a href="<?php echo get_permalink( get_page_by_path( 'organogram' ) ) ?>">Organograma</a>
+			                <a href="<?php echo get_permalink( get_page_by_path( 'organogram' ) ) ?>">Setores</a>
+			                <!-- <a href="<?php echo get_permalink( get_page_by_path( 'sectors' ) ) ?>">Setores</a> -->
 			            </li>
 			            <li>
 			                <a href="<?php echo get_permalink( get_page_by_path( 'team' ) ) ?>">Equipe</a>
@@ -76,7 +77,7 @@
 					<span class="space"></span>
 					<ul class="dropdown visit-us">
 						<li>
-			                <a href="<?php echo get_permalink( get_page_by_path( 'localization' ) ) ?>">Localização</a>
+			                <a href="<?php echo get_permalink( get_page_by_path( 'contact' ) ) ?>">Localização e Contato</a>
 			            </li>
 			            <li>
 			                <a href="<?php echo get_permalink( get_page_by_path( 'schedule-your-visit' ) ) ?>">Agende Sua Visita</a>
@@ -87,9 +88,6 @@
 			            <li>
 			                <a href="<?php echo get_permalink( get_page_by_path( 'documentation-center-verissimo-de-melo' ) ) ?>">Centro de Documentação Veríssimo de Melo</a>
 			            </li>
-			            <li>
-			                <a href="<?php echo get_permalink( get_page_by_path( 'contact' ) ) ?>">Contato</a>
-						</li>
 					</ul>
 				</li>
 			</ul>

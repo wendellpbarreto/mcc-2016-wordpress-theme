@@ -12,6 +12,12 @@ function execute_theme_config(){
 add_action('init', 'execute_theme_config');
 
 
+function remove_page_attribute_support() {
+    remove_post_type_support('page','page-attributes');
+}
+
+add_action( 'init', 'remove_page_attribute_support' );
+
 /*
  *
  * Theme config functions

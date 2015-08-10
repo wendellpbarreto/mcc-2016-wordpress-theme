@@ -1,54 +1,61 @@
-<?php get_header() ?>
 <?php
-    the_post();
-    $current_post = get_post();
-    $current_post->permalink = get_permalink();
-    $current_post->categories = get_the_category();
-    $current_post->tags = wp_get_post_tags($current_post->ID);
-    $current_post->thumbnail = preg_replace('/(.*)src="(.*)" class(.*)/', "$2", get_the_post_thumbnail(get_the_ID(), '700x400'));
-    $current_post->image = aq_resize( $current_post->thumbnail, 2000, 850, true );
-?>
+	get_header();
+
+	the_post();
+	$current_page = get_post();
+	$current_page->permalink = get_permalink();
+	$current_page->categories = get_the_category();
+	$current_page->tags = wp_get_post_tags($current_page->ID);
+	$current_page->image = wp_get_attachment_url( get_post_thumbnail_id($current_page->ID) );
+	$current_page->image200x850 = aq_resize( $current_page->image, 2000, 850, true );
+	$current_page->attachments = get_attachments_from_post($current_page);
+	$current_page->post_content = strip_shortcodes($current_page->post_content); ?>
+
 <?php include 'includes/topbar.php' ?>
 
-<section id="hero" class="container" style="background-image: url(<?php echo $current_post->thumbnail ?>);">
-	<!-- <img src="<?php echo $current_post->thumbnail ?>" alt="Hero"> -->
+<section id="hero" class="container" style="background-image: url(<?php echo $current_page->image200x850 ?>);">
 	<header class="hero__header">
-		<h1 class="hero__header-title white"><?php echo $current_post->post_title; ?></h1>
+		<h1 class="hero__header-title white"><?php echo $current_page->post_title; ?></h1>
 		<hr class="hero__header-divider">
 	</header>
 </section>
 
 <div class="posts__wrapper aside__wrapper row">
-    <div id="posts" class="large-20 columns internal">
-        <article class="post row">
-		    <header class="post__header column">
-		        <!-- <div class="post__header-tag-wrapper">
-		            <h6 class="post__header-tag"><?php echo $current_post->categories[0]->name; ?></h6>
-		            <span class="post__header-line"></span>
-		        </div> -->
-		        <!-- <p class="post__header-text small">
-		            <?php echo $current_post->post_excerpt; ?>
-		        </p> -->
-		        <!-- <div class="post__header-meta">
-		            <p class="post__header-meta-time">
-		                <i class="icon-clock"></i> <?php echo date('j \d\e M/Y', strtotime($current_post->post_date)); ?>
-		            </p>
-		            <p class="post__header-meta-share">
-		                COMPARTILHE <i class="icon-facebook" data-href="#"></i> <i class="icon-twitter" data-href="#"></i>
-		            </p>
-		        </div> -->
-		    </header>
-		    <div class="post__text column">
-		        <?php echo apply_filters('the_content', $current_post->post_content); ?>
-		    </div>
+	<div id="posts" class="large-20 columns internal">
+		<article class="post row">
+			<div class="post__text column">
+				<?php echo apply_filters('the_content', $current_page->post_content); ?>
+			</div>
+			<div class="post__carousel column">
+				<?php foreach($current_page->attachments as $attachment) : ?>
+					<div class="post__carousel-item">
+						<img class="post__carousel-item-image owl-lazy img-responsive" data-src="<?php echo aq_resize( $attachment->guid, 1040, 500, true ); ?>" alt="<?php echo $attachment->post_title ?>">
+						<p class="post__carousel-item-title"><?php echo $attachment->post_title ?></p>
+						<p class="post__carousel-item-legend"><?php echo $attachment->post_excerpt ?></p>
+					</div>
+				<?php endforeach ?>
+			</div>
+			<div class="post__carousel-thumbs column">
+				<?php foreach($current_page->attachments as $attachment) : ?>
+					<div class="post__carousel-item">
+						<img class="post__carousel-item-image" src="<?php echo aq_resize( $attachment->guid, 200, 100, true ); ?>" alt="<?php echo $attachment->post_title ?>">
+						<div class="post__carousel-item-hover">
+							<p class="post__carousel-item-hover-title"><?php echo $attachment->post_title ?></p>
+						</div>
+					</div>
+				<?php endforeach ?>
+			</div>
 		</article>
-    </div>
+	</div>
 </div>
 
+<div class="page-gap"></div>
+
 <?php include 'includes/footer.php' ?>
+
 <?php get_footer() ?>
 
 <!-- scripts::animate -->
 <script>
-    new cbpScroller(document.getElementById('footer'));
+	new cbpScroller(document.getElementById('footer'));
 </script>

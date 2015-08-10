@@ -205,4 +205,3 @@ if(!function_exists('aq_resize')) {
     }
 }
 
-

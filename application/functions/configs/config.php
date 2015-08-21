@@ -93,8 +93,8 @@ $theme_config = array(
 			'slug' => 'science-park',
 		),
 		array(
-			'title' => 'Centro de Documentação Veríssimo de Melo',
-			'slug' => 'documentation-center-verissimo-de-melo',
+			'title' => 'Documentação e Memória',
+			'slug' => 'documentation-and-memory',
 		),
 	)
 );

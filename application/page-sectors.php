@@ -25,12 +25,12 @@
 	function print_organogram($post_type) {
 		echo '<div class="tree">';
 			echo '<ul>';
-				get_posts_children(0, $post_type);
+				get_posts_children(0, $post_type, 0);
 			echo '</ul>';
 		echo '</div>';
 	}
 
-	function get_posts_children($parent_id, $post_type) {
+	function get_posts_children($parent_id, $post_type, $level) {
 		$sectors_query_args = array(
 			'post_type' => $post_type,
 			'posts_per_page' => -1,
@@ -50,10 +50,13 @@
 				$current_post->post_content = strip_shortcodes($current_post->post_content);
 
 				echo '<li>';
-				echo '<a href="#">' . $current_post->post_title . '</a>';
-				echo '<ul>';
-					get_posts_children($current_post->ID, $post_type);
-				echo '</ul>';
+					echo '<a href="#">';
+						echo '<div class="background" style="background-image: url(' . $current_post->image . ');"></div>';
+						echo '<div class="title">' . $current_post->post_title . '</div>';
+					echo '</a>';
+					echo '<ul class="' . ($level > 2 ? "vertical" : "") . '">';
+						get_posts_children($current_post->ID, $post_type, $level + 1);
+					echo '</ul>';
 				echo '</li>';
 			}
 		}

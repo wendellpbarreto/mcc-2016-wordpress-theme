@@ -41,7 +41,10 @@
 		                <i class="icon-clock"></i> <?php echo date('j \d\e M/Y', strtotime($current_post->post_date)); ?>
 		            </p>
 		            <p class="post__header-meta-share">
-		                COMPARTILHE <i class="icon-facebook" data-href="#"></i> <i class="icon-twitter" data-href="#"></i>
+		                COMPARTILHE <i class="icon-facebook" data-href="#"></i>  <div class="fb-share-button"
+        data-href="http://mcc.ufrn.br/ufrn-realiza-grande-homenagem-a-xico-santeiro/"
+        data-layout="button_count">
+    </div><i class="icon-twitter" data-href="#"></i>
 		            </p>
 		        </div>
 		    </header>

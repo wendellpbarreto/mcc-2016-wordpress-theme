@@ -12,15 +12,15 @@
 				</li>
 
 				<li class="has-dropdown">
-					<a class="<?php echo $slug == 'historical' || $slug == 'organogram' || $slug == 'team' ? 'active' : '' ?>">Institucional</a>
+					<a class="<?php echo $slug == 'historical' || $slug == 'sectors' || $slug == 'team' ? 'active' : '' ?>">Institucional</a>
 					<span class="space"></span>
 					<ul class="dropdown institutional">
 						<li>
 			                <a href="<?php echo get_permalink( get_page_by_path( 'historical' ) ) ?>">Histórico</a>
 			            </li>
 			            <li>
-			                <a href="<?php echo get_permalink( get_page_by_path( 'organogram' ) ) ?>">Setores</a>
-			                <!-- <a href="<?php echo get_permalink( get_page_by_path( 'sectors' ) ) ?>">Setores</a> -->
+			                <!-- <a href="<?php echo get_permalink( get_page_by_path( 'organogram' ) ) ?>">Setores</a> -->
+			                <a href="<?php echo get_permalink( get_page_by_path( 'sectors' ) ) ?>">Setores</a>
 			            </li>
 			            <li>
 			                <a href="<?php echo get_permalink( get_page_by_path( 'team' ) ) ?>">Equipe</a>
@@ -51,6 +51,9 @@
 			            </li>
 			            <li>
 			                <a href="<?php echo get_permalink( get_page_by_path( 'herbary' ) ) ?>">Herbário</a>
+						</li>
+						<li>
+			                <a href="<?php echo get_permalink( get_page_by_path( 'documentation-and-memory' ) ) ?>">Documental</a>
 						</li>
 					</ul>
 				</li>
@@ -86,7 +89,7 @@
 			                <a href="<?php echo get_permalink( get_page_by_path( 'science-park' ) ) ?>">Parque da Ciência</a>
 			            </li>
 			            <li>
-			                <a href="<?php echo get_permalink( get_page_by_path( 'documentation-center-verissimo-de-melo' ) ) ?>">Centro de Documentação Veríssimo de Melo</a>
+			                <a href="<?php echo get_permalink( get_page_by_path( 'documentation-and-memory' ) ) ?>">Documentação e Memória</a>
 			            </li>
 					</ul>
 				</li>

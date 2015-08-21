@@ -26,16 +26,53 @@
 		padding: 20px 5px 0 5px;
 
 		transition: all 0.5s;
+
+		a {
+			background-color: #fff;
+			border: 1px solid #3498db;
+			text-decoration: none;
+			display: inline-block;
+			transition: all 0.5s;
+			padding: 0;
+			margin: 0;
+			min-width: 160px;
+			.title {
+				text-transform: uppercase;
+				font-size: 0.85em;
+				color: #2c3e50;
+				padding: 10px;
+				letter-spacing: 1px;
+			}
+			.background {
+				width: 100%;
+				height: 100px;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+			}
+		}
 	}
 }
 
-/*We will use ::before and ::after to draw the connectors*/
+.tree > ul > li > ul > li > a {
+	width: 11em;
+}
 
-.tree li::before, .tree li::after{
+.tree > ul > li > a {
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.tree li::before,
+.tree li::after {
 	content: '';
-	position: absolute; top: 0; right: 50%;
+	position: absolute;
+	top: 0;
+	right: 50%;
 	border-top: 1px solid #3498db;
-	width: 50%; height: 20px;
+	width: 50%;
+	height: 70px;
+	z-index: -1;
 }
 .tree li::after{
 	right: auto; left: 50%;
@@ -69,24 +106,12 @@ right connector from last child*/
 	content: '';
 	position: absolute; top: 0; left: 50%;
 	border-left: 1px solid #3498db;
-	width: 0; height: 20px;
+	width: 0;
+	height: 20px;
 }
 
 .tree li a{
-	border: 1px solid #3498db;
-	padding: 1em 0.75em;
-	text-decoration: none;
-	color: #666767;
-	font-family: arial, verdana, tahoma;
-	font-size: 0.85em;
-	display: inline-block;
 
-	/*
-	*/
-
-	transition: all 0.5s;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
 }
 
 /* -------------------------------- */
@@ -95,7 +120,7 @@ right connector from last child*/
 
 .tree ul.vertical, ul.vertical ul {
 	padding-top: 0px;
-	left: 50%;
+	margin: auto;
 }
 
 /* Remove the downward connectors from parents */
@@ -105,7 +130,7 @@ right connector from last child*/
 
 .tree ul.vertical li {
 	float: none;
-	text-align: left;
+	display: block;
 }
 
 .tree ul.vertical li::before {
@@ -118,16 +143,14 @@ right connector from last child*/
 }
 
 .tree ul.vertical li a{
-	padding: 10px 0.75em;
-	margin-left: 16px;
 }
 
 .tree ul.vertical li::before {
 	top: -20px;
-	left: 0px;
-	border-bottom: 1px solid #3498db;
+	left: 50%;
 	border-left: 1px solid #3498db;
-	width: 20px; height: 60px;
+	width: 20px;
+	height: 60px;
 }
 
 .tree ul.vertical li:first-child::before {
@@ -137,23 +160,18 @@ right connector from last child*/
 
 /* Lets add some extra styles */
 
-div.tree > ul > li > ul > li > a {
-	width: 11em;
-}
 
-div.tree > ul > li > a {
-	font-size: 1em;
-	font-weight: bold;
-}
 
 
 /* ------------------------------------------------------------------ */
 /* Time for some hover effects                                        */
 /* We will apply the hover effect the the lineage of the element also */
 /* ------------------------------------------------------------------ */
-.tree li a:hover, .tree li a:hover+ul li a {
+.tree li a:hover, .tree li a:hover + ul li a {
 	background: #3498db;
-	color: white;
+	.title {
+		color: #fff;
+	}
 	/* border: 1px solid #aaa; */
 }
 /*Connector styles on hover*/

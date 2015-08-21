@@ -484,6 +484,9 @@ button {
 				.post__header-meta-share {
 					float: right;
 					font-size: 13px;
+					& > * {
+						vertical-align: middle;
+					}
 				}
 			}
 		}

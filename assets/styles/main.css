@@ -7535,6 +7535,8 @@ button {
     #posts .post .post__header .post__header-meta .post__header-meta-share {
       float: right;
       font-size: 13px; }
+      #posts .post .post__header .post__header-meta .post__header-meta-share > * {
+        vertical-align: middle; }
   #posts .post .post__text {
     margin-top: 20px; }
     #posts .post .post__text h1, #posts .post .post__text h2, #posts .post .post__text h3, #posts .post .post__text h4, #posts .post .post__text h5, #posts .post .post__text h6, #posts .post .post__text p {

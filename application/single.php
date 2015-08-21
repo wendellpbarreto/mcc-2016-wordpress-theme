@@ -40,12 +40,11 @@
 		            <p class="post__header-meta-time">
 		                <i class="icon-clock"></i> <?php echo date('j \d\e M/Y', strtotime($current_post->post_date)); ?>
 		            </p>
-		            <p class="post__header-meta-share">
-		                COMPARTILHE
-		                <div class="fb-share-button" data-href="<?php echo $current_post->permalink ?>" data-layout="button_count">
+		            <div class="post__header-meta-share">
+		                <div class="fb-share-button" data-href="<?php echo $current_post->permalink ?>" data-layout="button_count"></div>
 
-		                <a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo $current_post->permalink ?>">Tweet</a>
-		            </p>
+		                <a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo $current_post->permalink ?>"></a>
+		            </div>
 		        </div>
 		    </header>
 		    <div class="post__crop column">

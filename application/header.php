@@ -8,7 +8,7 @@
 	<meta name="viewport" content="initial-scale=1.0 maximum-scale=1.0 user-scalable=no">
         <link rel="icon" type="image/png" href="<?php echo get_image('mcc@favicon.png') ?>">
         <!-- meta tags -->
-        <meta name="author" content="">
+        <meta name="author" content="MCC">
         <meta name="description" content="">
         <meta name="keywords" content="museu, câmara, cascudo, site, website, natal, rio, grande, do, norte, wordpress, blog">
         <!-- facebook tags -->

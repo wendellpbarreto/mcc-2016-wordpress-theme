@@ -12,6 +12,7 @@
 		<h1 class="hero__header-title white">Notícias</h1>
 		<hr class="hero__header-divider">
 	</header>
+	<div class="mask"></div>
 </section>
 
 <div class="posts__wrapper aside__wrapper row">

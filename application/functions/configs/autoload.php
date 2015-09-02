@@ -11,6 +11,7 @@
 	require 'utilities/hide_update_message.php';
 	require 'utilities/the_slug.php';
 	require 'utilities/get_attachments_from_post.php';
+	require 'utilities/limit_words.php';
 
 	/**
 	 * Custom Post Types

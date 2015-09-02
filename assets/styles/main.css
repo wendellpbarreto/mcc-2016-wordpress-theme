@@ -131,7 +131,7 @@ select {
 
 .row {
   margin: 0 auto;
-  max-width: 66.875rem;
+  max-width: 68.75rem;
   width: 100%; }
   .row:before, .row:after {
     content: " ";
@@ -4380,7 +4380,7 @@ button:focus {
     .reveal-modal {
       left: 0;
       margin: 0 auto;
-      max-width: 66.875rem;
+      max-width: 68.75rem;
       right: 0;
       width: 80%; } }
   @media only screen and (min-width: 40.0625em) {
@@ -4396,35 +4396,35 @@ button:focus {
     .reveal-modal.tiny {
       left: 0;
       margin: 0 auto;
-      max-width: 66.875rem;
+      max-width: 68.75rem;
       right: 0;
       width: 30%; } }
   @media only screen and (min-width: 40.0625em) {
     .reveal-modal.small {
       left: 0;
       margin: 0 auto;
-      max-width: 66.875rem;
+      max-width: 68.75rem;
       right: 0;
       width: 40%; } }
   @media only screen and (min-width: 40.0625em) {
     .reveal-modal.medium {
       left: 0;
       margin: 0 auto;
-      max-width: 66.875rem;
+      max-width: 68.75rem;
       right: 0;
       width: 60%; } }
   @media only screen and (min-width: 40.0625em) {
     .reveal-modal.large {
       left: 0;
       margin: 0 auto;
-      max-width: 66.875rem;
+      max-width: 68.75rem;
       right: 0;
       width: 70%; } }
   @media only screen and (min-width: 40.0625em) {
     .reveal-modal.xlarge {
       left: 0;
       margin: 0 auto;
-      max-width: 66.875rem;
+      max-width: 68.75rem;
       right: 0;
       width: 95%; } }
   .reveal-modal.full {
@@ -4439,7 +4439,7 @@ button:focus {
       .reveal-modal.full {
         left: 0;
         margin: 0 auto;
-        max-width: 66.875rem;
+        max-width: 68.75rem;
         right: 0;
         width: 100%; } }
   .reveal-modal.toback {
@@ -5362,7 +5362,7 @@ meta.foundation-mq-topbar {
   .contain-to-grid .top-bar {
     margin-bottom: 0;
     margin: 0 auto;
-    max-width: 66.875rem; }
+    max-width: 68.75rem; }
   .top-bar-section {
     -webkit-transition: none 0 0;
             transition: none 0 0;
@@ -7275,28 +7275,28 @@ button {
 .has-dropdown {
   position: relative; }
   .has-dropdown:hover > a:first-child {
-    background-color: #3498db; }
-    .has-dropdown:hover > a:first-child:before {
-      border-color: #3498db !important; }
+    color: #5EBFFF !important; }
   .has-dropdown:hover > .dropdown {
-    display: block; }
+    overflow: visible !important; }
+  .has-dropdown:hover ul li a {
+    margin-right: 0 !important;
+    opacity: 1 !important; }
   .has-dropdown .space {
     display: block;
     height: 43px;
     width: 100%; }
   .has-dropdown ul.dropdown {
-    display: none;
     position: absolute;
-    background-color: #2c3e50;
-    left: -50%;
-    padding: 0 5px 5px 5px;
-    margin: 0; }
+    right: 0;
+    padding: 0;
+    margin: 0;
+    overflow: hidden; }
     .has-dropdown ul.dropdown li {
       display: block; }
       .has-dropdown ul.dropdown li a {
         text-align: center;
-        display: block;
-        border: 1px solid #3498db;
+        display: inline-block;
+        white-space: pre;
         color: #fff;
         text-transform: uppercase;
         position: relative;
@@ -7306,31 +7306,21 @@ button {
         line-height: 20px;
         color: #fff;
         font-size: 12px;
-        padding: 5px 10px;
-        -webkit-transition: background-color 0.3s ease-in-out;
-                transition: background-color 0.3s ease-in-out; }
+        padding: 10px 10px 10px 20px;
+        -webkit-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.37);
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin-right: -500px;
+        opacity: 0; }
         .has-dropdown ul.dropdown li a:hover {
-          background-color: #3498db; }
-    .has-dropdown ul.dropdown.institutional {
-      margin-left: 35px; }
-      .has-dropdown ul.dropdown.institutional li a {
-        width: 130px; }
-    .has-dropdown ul.dropdown.collection li a {
-      width: 130px; }
-    .has-dropdown ul.dropdown.expositions {
-      margin-left: 25px; }
-      .has-dropdown ul.dropdown.expositions li a {
-        width: 130px; }
-    .has-dropdown ul.dropdown.visit-us {
-      right: 0;
-      left: initial; }
-      .has-dropdown ul.dropdown.visit-us li a {
-        width: 160px; }
+          color: #5EBFFF; }
 
 .page-gap {
   width: 100%;
   position: relative;
-  height: 250px; }
+  height: 150px; }
 
 /*
  *
@@ -7400,17 +7390,22 @@ button {
  * Sections
  */
 #topbar {
-  background-color: #2c3e50;
+  background-color: transparent;
   height: 118px;
-  position: fixed;
+  position: absolute;
   z-index: 9999;
   top: 0;
   left: 0;
   right: 0;
-  width: 100%; }
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.37);
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out; }
   #topbar.fixed-topbar {
     height: 80px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7); }
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
+    background-color: #2c3e50;
+    border-bottom: none; }
     #topbar.fixed-topbar .topbar__logo-img {
       width: 150px; }
     #topbar.fixed-topbar .topbar__nav {
@@ -7426,7 +7421,10 @@ button {
     top: 50%;
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
-            transform: translateY(-50%); }
+            transform: translateY(-50%);
+    -webkit-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+    width: 171px; }
   #topbar .topbar__nav {
     text-align: right;
     margin-bottom: 0;
@@ -7445,35 +7443,31 @@ button {
         color: #fff;
         font-size: 12px;
         display: inline-block;
-        padding: 5px 10px;
+        padding: 5px 5px 47px 5px;
         -webkit-transition: background-color 0.3s ease-in-out;
-                transition: background-color 0.3s ease-in-out; }
-        #topbar .topbar__nav > li > a:before {
-          position: absolute;
-          top: -5px;
-          right: -5px;
-          bottom: -5px;
-          left: -5px;
-          border: 1px solid transparent;
-          content: ""; }
+                transition: background-color 0.3s ease-in-out;
+        white-space: pre;
+        font-weight: 400;
+        letter-spacing: 1px;
+        border-bottom: 1px solid transparent; }
         #topbar .topbar__nav > li > a.active, #topbar .topbar__nav > li > a:hover {
-          background-color: #3498db; }
-          #topbar .topbar__nav > li > a.active:before, #topbar .topbar__nav > li > a:hover:before {
-            border-color: #3498db; }
+          color: #5EBFFF; }
   #topbar .columns {
     height: 118px; }
 
 #hero {
-  height: 350px;
+  height: 450px;
   overflow: hidden;
   position: relative;
-  margin-top: 118px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }
   #hero .hero__header {
     position: absolute;
-    top: 35%;
+    top: 60%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
     z-index: 10;
     left: 0;
     right: 0;
@@ -7714,6 +7708,9 @@ button {
       color: #fff;
       text-shadow: 0 0 5px #2c3e50; }
 
+#aside .aside__vernaculo-widget {
+  margin-top: 15px; }
+
 #expositions .exposition {
   position: relative;
   overflow: hidden;
@@ -7727,24 +7724,22 @@ button {
     letter-spacing: 1px;
     text-transform: uppercase; }
 
-#carousel {
-  padding-top: 118px; }
-  #carousel .owl-controls .owl-dots {
-    position: absolute;
-    bottom: 10px;
-    right: 0;
-    left: 0;
-    width: 100%;
-    text-align: center; }
-    #carousel .owl-controls .owl-dots .owl-dot {
-      border: 1px solid transparent;
-      background-color: #2c3e50;
-      height: 7px;
-      width: 30px;
-      display: inline-block;
-      margin: 0 5px; }
-      #carousel .owl-controls .owl-dots .owl-dot.active {
-        background-color: #3498db; }
+#carousel .owl-controls .owl-dots {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  left: 0;
+  width: 100%;
+  text-align: center; }
+  #carousel .owl-controls .owl-dots .owl-dot {
+    border: 1px solid transparent;
+    background-color: #2c3e50;
+    height: 7px;
+    width: 30px;
+    display: inline-block;
+    margin: 0 5px; }
+    #carousel .owl-controls .owl-dots .owl-dot.active {
+      background-color: #3498db; }
 
 #map {
   height: 400px;

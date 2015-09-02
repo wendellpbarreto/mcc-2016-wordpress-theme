@@ -11,4 +11,4 @@ function scrollHandler() {
 	}
 }
 
-$(window).scroll(scrollHandler);
+// $(window).scroll(scrollHandler);

@@ -23,11 +23,11 @@
 		        $current_post = get_post();
 		        $current_post->permalink = get_permalink();
 		        $current_post->image = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
-	            $current_post->image2000x850 = aq_resize( $current_post->image, 2000, 850, true );
+	            $current_post->image1920x1080 = aq_resize( $current_post->image, 1920, 1080, true );
 
 	            if ($current_post->post_primary_featured == "true"): ?>
 	<div class="carousel__item" data-href="<?php echo $current_post->permalink ?>">
-		<img data-src="<?php echo $current_post->image2000x850 ?>" alt="<?php echo $current_post->post_title ?>" class="owl-lazy">
+		<img data-src="<?php echo $current_post->image1920x1080 ?>" alt="<?php echo $current_post->post_title ?>" class="owl-lazy">
 	</div>
 	<?php
 			endif;
@@ -40,9 +40,9 @@
 		        $banner_query->the_post();
 		        $current_post = get_post();
 		        $current_post->image = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
-	            $current_post->image2000x850 = aq_resize( $current_post->image, 2000, 850, true ); ?>
+	            $current_post->image1920x1080 = aq_resize( $current_post->image, 1920, 850, true ); ?>
 	<div class="carousel__item">
-		<img data-src="<?php echo $current_post->image2000x850 ?>" alt="<?php echo $current_post->post_title ?>" class="owl-lazy">
+		<img data-src="<?php echo $current_post->image1920x1080 ?>" alt="<?php echo $current_post->post_title ?>" class="owl-lazy">
 	</div>
 	<?php
 			endwhile;
@@ -51,7 +51,7 @@
 
 <div class="posts__wrapper aside__wrapper row">
 	<section id="posts" class="container small-20 medium-13 columns">
-		<div class="posts__featured-carousel animated fade-in-left">
+		<!-- <div class="posts__featured-carousel">
 			<?php
 				if ($post_query->have_posts()) :
 				    while ($post_query->have_posts()) :
@@ -59,7 +59,7 @@
 				        $current_post = get_post();
 				        $current_post->permalink = get_permalink();
 				        $current_post->thumbnail = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
-			            $current_post->image = aq_resize( $current_post->thumbnail, 800, 400, true );
+			            $current_post->image = aq_resize( $current_post->thumbnail, 1920, 1080, true );
 
 			            if ($current_post->post_secundary_featured == "true"): ?>
 			<div class="post__featured" data-href="<?php echo $current_post->permalink ?>">
@@ -72,7 +72,7 @@
 						endif;
 					endwhile;
 				endif; ?>
-		</div>
+		</div> -->
 
 		<?php
 			if ($post_query->have_posts()) :
@@ -81,10 +81,10 @@
 			        $current_post = get_post();
 			        $current_post->permalink = get_permalink();
 			        $current_post->thumbnail = preg_replace('/(.*)src="(.*)" class(.*)/', "$2", get_the_post_thumbnail($current_post->ID, 'galeria'));
-		            $current_post->image = aq_resize( $current_post->thumbnail, 400, 240, true );
+		            $current_post->image = aq_resize( $current_post->thumbnail, 1920, 1080, true );
 
 		            if ($current_post->thumbnail): ?>
-		<div class="post animated fade-in-left">
+		<div class="post">
 			<div class="row collapse">
 				<div class="small-8 columns">
 					<div class="post__img-crop" data-href="<?php echo $current_post->permalink ?>">
@@ -102,7 +102,7 @@
 			</div>
 		</div>
 		<?php 		else: ?>
-		<div class="post animated fade-in-left">
+		<div class="post">
 			<div class="row collapse">
 				<div class="small-20 columns">
 					<h3 class="post__heading"><a href="<?php echo $current_post->permalink ?>"><?php echo $current_post->post_title ?></a></h3>
@@ -123,11 +123,11 @@
         <?php include TEMPLATEPATH.'/search.php'; ?>
 
         <div class="aside__facebook-widget row">
-        	<div class="fb-page" data-href="https://www.facebook.com/museucamaracascudoufrn" data-width="500" data-hide-cover="false" data-show-facepile="true" data-show-posts="true"></div>
+        	<div class="fb-page" data-href="https://www.facebook.com/museucamaracascudoufrn" data-width="500" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
         	<div class="small-20">
-		        <div class="aside__visit-us m-t-md animated fade-in-right" data-href="<?php echo get_permalink(get_page_by_path( 'contact' ))?>">
+		        <div class="aside__visit-us m-t-md" data-href="<?php echo get_permalink(get_page_by_path( 'contact' ))?>">
 		        	<img src="<?php echo get_image('visit-us.jpg') ?>" alt="Visite Nosso Museu">
 		        	<div class="aside__visit-us-title">
 		        		<h3>VISITE</h3>
@@ -136,6 +136,9 @@
 		        	</div>
 		        </div>
         	</div>
+        </div> -->
+        <div class="aside__vernaculo-widget row">
+    		<img src="<?php echo get_image( 'vernaculo.jpg' ) ?>" alt="Projeto Vernáculo" class="responsive" data-href="http://vernaculo.ufrn.br/">
         </div>
     </aside>
 </div>
@@ -152,7 +155,7 @@
 
 <!-- scripts::animate -->
 <script>
-    new cbpScroller(document.getElementById('posts'));
-    new cbpScroller(document.getElementById('aside'));
+    // new cbpScroller(document.getElementById('posts'));
+    // new cbpScroller(document.getElementById('aside'));
     new cbpScroller(document.getElementById('footer'));
 </script>

@@ -13,14 +13,13 @@
 
 				<li class="has-dropdown">
 					<a class="<?php echo $slug == 'historical' || $slug == 'sectors' || $slug == 'team' ? 'active' : '' ?>">Institucional</a>
-					<span class="space"></span>
 					<ul class="dropdown institutional">
 						<li>
 			                <a href="<?php echo get_permalink( get_page_by_path( 'historical' ) ) ?>">Histórico</a>
 			            </li>
 			            <li>
-			                <!-- <a href="<?php echo get_permalink( get_page_by_path( 'organogram' ) ) ?>">Setores</a> -->
-			                <a href="<?php echo get_permalink( get_page_by_path( 'sectors' ) ) ?>">Setores</a>
+			                <a href="<?php echo get_permalink( get_page_by_path( 'organogram' ) ) ?>">Setores</a>
+			                <!-- <a href="<?php echo get_permalink( get_page_by_path( 'sectors' ) ) ?>">Setores</a> -->
 			            </li>
 			            <li>
 			                <a href="<?php echo get_permalink( get_page_by_path( 'team' ) ) ?>">Equipe</a>
@@ -38,7 +37,6 @@
 
 				<li class="has-dropdown">
 					<a class="<?php echo $slug == 'paleontology' || $slug == 'archeology' || $slug == 'ethnology' || $slug == 'herbary' ? 'active' : '' ?>">Acervo</a>
-					<span class="space"></span>
 					<ul class="dropdown collection">
 						<li>
 			                <a href="<?php echo get_permalink( get_page_by_path( 'paleontology' ) ) ?>">Paleontologia</a>
@@ -60,7 +58,6 @@
 
 				<li class="has-dropdown">
 					<a class="<?php echo $slug == 'long-duration-expositions' || $slug == 'temporary-expositions' ? 'active' : '' ?>">Exposições</a>
-					<span class="space"></span>
 					<ul class="dropdown expositions">
 						<li>
 			                <a href="<?php echo get_permalink( get_page_by_path( 'long-duration-expositions' ) ) ?>">Longa Duração</a>
@@ -77,7 +74,6 @@
 
 				<li class="has-dropdown">
 					<a class="<?php echo $slug == 'localization' || $slug == 'schedule-your-visit' || $slug == 'science-park' || $slug == 'documentation-center-verissimo-de-melo' || $slug == 'contact' ? 'active' : '' ?>">Visite o Museu</a>
-					<span class="space"></span>
 					<ul class="dropdown visit-us">
 						<li>
 			                <a href="<?php echo get_permalink( get_page_by_path( 'contact' ) ) ?>">Localização e Contato</a>

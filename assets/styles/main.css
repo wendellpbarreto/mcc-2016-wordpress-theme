@@ -7306,7 +7306,7 @@ button {
         line-height: 20px;
         color: #fff;
         font-size: 12px;
-        padding: 10px 10px 10px 20px;
+        padding: 8px 10px 8px 20px;
         -webkit-transition: all 0.3s ease-in-out;
                 transition: all 0.3s ease-in-out;
         border-bottom: 1px solid rgba(255, 255, 255, 0.37);
@@ -7390,7 +7390,7 @@ button {
  * Sections
  */
 #topbar {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.2);
   height: 118px;
   position: absolute;
   z-index: 9999;
@@ -7398,7 +7398,6 @@ button {
   left: 0;
   right: 0;
   width: 100%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.37);
   -webkit-transition: all 0.3s ease-in-out;
           transition: all 0.3s ease-in-out; }
   #topbar.fixed-topbar {
@@ -7464,7 +7463,7 @@ button {
   background-position: center center; }
   #hero .hero__header {
     position: absolute;
-    top: 60%;
+    top: 63%;
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);
@@ -7494,6 +7493,21 @@ button {
       border-width: 1px 0 0 0;
       border-color: #3498db;
       margin-bottom: 20px; }
+  #hero .mask {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 100;
+    -webkit-transition: opacity 0.4s ease-in-out;
+            transition: opacity 0.4s ease-in-out; }
+    #hero .mask.active {
+      opacity: 0.6; }
 
 .posts__wrapper {
   margin-top: 50px; }
@@ -7740,6 +7754,24 @@ button {
     margin: 0 5px; }
     #carousel .owl-controls .owl-dots .owl-dot.active {
       background-color: #3498db; }
+
+#carousel:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease-in-out;
+          transition: opacity 0.4s ease-in-out;
+  pointer-events: none; }
+
+#carousel.darked:after {
+  opacity: 0.4; }
 
 #map {
   height: 400px;

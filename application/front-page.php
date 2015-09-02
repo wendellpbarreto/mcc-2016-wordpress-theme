@@ -23,9 +23,9 @@
 		        $current_post = get_post();
 		        $current_post->permalink = get_permalink();
 		        $current_post->image = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
-	            $current_post->image1920x1080 = aq_resize( $current_post->image, 1920, 1080, true );
+	            $current_post->image1920x1080 = aq_resize( $current_post->image, 1920, 1080, true, true );
 
-	            if ($current_post->post_primary_featured == "true"): ?>
+	            if ($current_post->post_primary_featured == "true" && $current_post->image1920x1080): ?>
 	<div class="carousel__item" data-href="<?php echo $current_post->permalink ?>">
 		<img data-src="<?php echo $current_post->image1920x1080 ?>" alt="<?php echo $current_post->post_title ?>" class="owl-lazy">
 	</div>
@@ -40,11 +40,14 @@
 		        $banner_query->the_post();
 		        $current_post = get_post();
 		        $current_post->image = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
-	            $current_post->image1920x1080 = aq_resize( $current_post->image, 1920, 850, true ); ?>
+	            $current_post->image1920x1080 = aq_resize( $current_post->image, 1920, 1080, true, true );
+
+	            if ($current_post->image1920x1080): ?>
 	<div class="carousel__item">
 		<img data-src="<?php echo $current_post->image1920x1080 ?>" alt="<?php echo $current_post->post_title ?>" class="owl-lazy">
 	</div>
 	<?php
+				endif;
 			endwhile;
 		endif; ?>
 </section>

@@ -4,27 +4,27 @@
 @import "animated";
 
 @media #{$small-only} {
-    p {
-        font-size: $paragraph-font-size - rem-calc(3);
-    }
-    h1 {
-        font-size: $h1-font-size - rem-calc(3);
-    }
-    h2 {
-        font-size: $h2-font-size - rem-calc(5);
-    }
-    h3 {
-        font-size: $h3-font-size - rem-calc(3);
-    }
-    h4 {
-        font-size: $h4-font-size - rem-calc(3);
-    }
-    h5 {
-        font-size: $h5-font-size - rem-calc(3);
-    }
-    h6 {
-        font-size: $h6-font-size - rem-calc(3);
-    }
+  p {
+      font-size: $paragraph-font-size - rem-calc(3);
+  }
+  h1 {
+      font-size: $h1-font-size - rem-calc(3);
+  }
+  h2 {
+      font-size: $h2-font-size - rem-calc(5);
+  }
+  h3 {
+      font-size: $h3-font-size - rem-calc(3);
+  }
+  h4 {
+      font-size: $h4-font-size - rem-calc(3);
+  }
+  h5 {
+      font-size: $h5-font-size - rem-calc(3);
+  }
+  h6 {
+      font-size: $h6-font-size - rem-calc(3);
+  }
 }
 
 img.alignright { float: right; margin: 0 0 1em 1em; }
@@ -204,7 +204,7 @@ button {
 				line-height: 20px;
 				color: #fff;
 				font-size: 12px;
-				padding: 10px 10px 10px 20px;
+				padding: 8px 10px 8px 20px;
 				transition: all 0.3s ease-in-out;
 				border-bottom: 1px solid rgba(255, 255, 255, 0.37);
 				font-weight: 400;
@@ -342,7 +342,7 @@ button {
  * Sections
  */
 #topbar {
-	background-color: transparent;
+	background-color: rgba(0, 0, 0, 0.2);
 	height: 118px;
 	position: absolute;
 	z-index: 9999;
@@ -350,7 +350,7 @@ button {
 	left: 0;
 	right: 0;
 	width: 100%;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.37);
+	// border-bottom: 1px solid rgba(255, 255, 255, 0.37);
 	transition: all .3s ease-in-out;
 	&.fixed-topbar {
 		height: 80px;
@@ -439,7 +439,7 @@ button {
 	background-position: center center;
 	.hero__header {
 		position: absolute;
-		top: 60%;
+		top: 63%;
 		transform: translateY(-50%);
 		z-index: 10;
 		left: 0;
@@ -470,6 +470,22 @@ button {
 	        border-width: 1px 0 0 0;
 	        border-color: #3498db;
 	        margin-bottom: 20px;
+		}
+	}
+	.mask {
+		opacity: 0;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		background-color: #000;
+		z-index: 100;
+		transition: opacity .4s ease-in-out;
+		&.active {
+			opacity: 0.6;
 		}
 	}
 }
@@ -788,6 +804,23 @@ button {
 				}
 			}
 		}
+	}
+	&:after {
+		content: " ";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    transition: opacity .4s ease-in-out;
+    pointer-events: none;
+	}
+	&.darked:after {
+    opacity: 0.4;
 	}
 }
 

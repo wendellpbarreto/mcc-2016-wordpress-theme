@@ -23,5 +23,5 @@
 <meta property="og:url" content="<?php echo $url ?>">
 <meta property="og:type" content="website">
 <meta property="og:title" content="<?php echo $title ?>">
-<meta property="og:description" content="<?php echo strip_tags($description) ?>">
+<meta property="og:description" content="<?php echo wp_trim_words(strip_tags($description), 20, '') ?>">
 <meta property="og:image" content="<?php echo $image ?>">

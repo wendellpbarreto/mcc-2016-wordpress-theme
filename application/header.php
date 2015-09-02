@@ -12,11 +12,7 @@
         <meta name="description" content="">
         <meta name="keywords" content="museu, câmara, cascudo, site, website, natal, rio, grande, do, norte, wordpress, blog">
         <!-- facebook tags -->
-        <meta property="og:url"           content="<?php echo get_site_url() ?>">
-	    <meta property="og:type"          content="website">
-	    <meta property="og:title"         content="Museu Câmara Cascudo">
-	    <meta property="og:description"   content="">
-	    <meta property="og:image"         content="<?php echo get_image( 'logo.png' ) ?>">
+        <?php include 'includes/facebook_tags.php' ?>
         <!-- twitter tags -->
         <meta name="twitter:card" content="">
         <meta name="twitter:image" content="<?php echo get_image( 'logo.png' ) ?>">

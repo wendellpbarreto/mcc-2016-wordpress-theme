@@ -54,7 +54,5 @@
 
 <!-- scripts::animate -->
 <script>
-    new cbpScroller(document.getElementById('posts'));
-    new cbpScroller(document.getElementById('aside'));
     new cbpScroller(document.getElementById('footer'));
 </script>

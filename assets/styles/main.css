@@ -7312,7 +7312,7 @@ button {
         border-bottom: 1px solid rgba(255, 255, 255, 0.37);
         font-weight: 400;
         letter-spacing: 1px;
-        margin-right: -500px;
+        margin-right: -250px;
         opacity: 0; }
         .has-dropdown ul.dropdown li a:hover {
           color: #5EBFFF; }
@@ -7455,7 +7455,7 @@ button {
     height: 118px; }
 
 #hero {
-  height: 450px;
+  height: 470px;
   overflow: hidden;
   position: relative;
   background-repeat: no-repeat;
@@ -7463,7 +7463,7 @@ button {
   background-position: center center; }
   #hero .hero__header {
     position: absolute;
-    top: 63%;
+    top: 60%;
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%);

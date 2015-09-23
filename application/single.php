@@ -48,9 +48,6 @@
 		            </div>
 		        </div>
 		    </header>
-		    <div class="post__crop column">
-		        <img src="<?php echo $current_post->thumbnail ?>" alt="" class="img-responsive"/>
-		    </div>
 		    <div class="post__text column">
 		        <?php echo apply_filters('the_content', $current_post->post_content); ?>
 		    </div>

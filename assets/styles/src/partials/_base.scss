@@ -157,43 +157,20 @@ button {
 }
 .has-dropdown {
 	position: relative;
-	&:hover {
-		& > a:first-child {
-			// background-color: #3498db;
-			// border-color: rgba(52, 152, 219, 0.7) !important;
-			color: #5EBFFF !important;
-    	&:before {
-    		// border-color: #3498db !important;
-    	}
-		}
-		& > .dropdown {
-			// display: block;
-			overflow: visible !important;
-		}
-		ul li a {
-			margin-right: 0 !important;
-  		opacity: 1 !important;
-		}
-	}
-	.space {
-		display: block;
-		height: 43px;
-		width: 100%;
-	}
 	ul.dropdown {
-		// pointer-events: none;
 		position: absolute;
-		// background-color: #2c3e50;
-		right: 0;
+		background-color: #2c3e50;
+		top: 100%;
+		right: -5px;
 		padding: 0;
 		margin: 0;
-		overflow: hidden;
+		z-index: 90;
+		display: none;
 		li {
 			display: block;
 			a {
 				text-align: center;
 				display: inline-block;
-				// border: 1px solid #3498db;
   			white-space: pre;
 				color: #fff;
 				text-transform: uppercase;
@@ -204,50 +181,23 @@ button {
 				line-height: 20px;
 				color: #fff;
 				font-size: 12px;
-				padding: 8px 10px 8px 20px;
+				padding: 8px 10px 8px 30px;
 				transition: all 0.3s ease-in-out;
-				border-bottom: 1px solid rgba(255, 255, 255, 0.37);
 				font-weight: 400;
   			letter-spacing: 1px;
-
-  			margin-right: -250px;
-    		opacity: 0;
-
 				&:hover {
-					// background-color: #3498db;
-					// border-color: rgba(52, 152, 219, 0.7);
 					color: #5EBFFF;
-					&:before {
-					// border-color: #3498db;
-					}
 				}
 			}
 		}
-		// &.institutional {
-		// 	margin-left: 35px;
-		// 	li a {
-		// 		width: 130px;
-		// 	}
-		// }
-		// &.collection {
-		// 	// margin-left: -35px;
-		// 	li a {
-		// 		width: 130px;
-		// 	}
-		// }
-		// &.expositions {
-		// 	margin-left: 25px;
-		// 	li a {
-		// 		width: 130px;
-		// 	}
-		// }
-		// &.visit-us {
-		// 	right: 0;
-		// 	left: initial;
-		// 	li a {
-		// 		width: 160px;
-		// 	}
-		// }
+	}
+	&:hover {
+		& > a {
+			color: #5EBFFF;
+		}
+		ul.dropdown {
+			display: block;
+		}
 	}
 }
 .page-gap {
@@ -342,36 +292,9 @@ button {
  * Sections
  */
 #topbar {
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: #2c3e50;
 	height: 118px;
-	position: absolute;
-	z-index: 9999;
-	top: 0;
-	left: 0;
-	right: 0;
-	width: 100%;
-	// border-bottom: 1px solid rgba(255, 255, 255, 0.37);
 	transition: all .3s ease-in-out;
-	&.fixed-topbar {
-		height: 80px;
-		box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.7);
-		background-color: #2c3e50;
-		border-bottom: none;
-		.topbar__logo-img {
-			width: 150px;
-		}
-		.topbar__nav {
-			text-align: right;
-			margin-bottom: 0;
-			padding-top: 25px;
-		}
-		.has-dropdown .space {
-			height: 25px;
-		}
-		.columns {
-			height: 80px;
-		}
-	}
 	.topbar__logo-img {
 		position: absolute;
 		top: 50%;
@@ -386,41 +309,23 @@ button {
   	& > li {
   		display: inline-block;
   		& > a {
-  			text-transform: uppercase;
-  			position: relative;
-  			color: $white;
-  			margin-left: 5px;
-  			margin-right: 5px;
-  			font-weight: 300;
-  			line-height: 20px;
-  			margin-bottom: 0;
   			color: #fff;
-  			font-size: 12px;
   			display: inline-block;
-  			// padding: 5px 5px;
-  			padding: 5px 5px 47px 5px;
-  			transition: background-color 0.3s ease-in-out;
-  			white-space: pre;
+  			font-size: 12px;
   			font-weight: 400;
   			letter-spacing: 1px;
-  			border-bottom: 1px solid transparent;
-  			// &:before {
-  			// 	position: absolute;
-  			// 	top: -5px;
-  			// 	right: -5px;
-  			// 	bottom: -5px;
-  			// 	left: -5px;
-  			// 	border: 1px solid transparent;
-  			// 	content: "";
-  			// }
+  			line-height: 20px;
+  			margin-bottom: 0;
+  			margin-left: 5px;
+  			margin-right: 5px;
+  			padding: 5px 5px 47px 5px;
+  			position: relative;
+  			text-transform: uppercase;
+  			transition: color 0.3s ease-in-out;
+  			white-space: pre;
+  			z-index: 100;
   			&.active, &:hover {
-  				// color: #3498db;
-  				// background-color: #3498db;
-					// border-color: rgba(52, 152, 219, 0.7);
 					color: #5EBFFF;
-  				&:before {
-  					// border-color: #3498db;
-  				}
   			}
   		}
   	}
@@ -439,7 +344,7 @@ button {
 	background-position: center center;
 	.hero__header {
 		position: absolute;
-		top: 60%;
+		top: 50%;
 		transform: translateY(-50%);
 		z-index: 10;
 		left: 0;
@@ -759,6 +664,25 @@ button {
 	}
 	.aside__vernaculo-widget {
 		margin-top: 15px;
+	}
+}
+.aside__social {
+	padding-top: 20px;
+	text-align: center;
+	a {
+		display: inline-block;
+		border: 1px solid #3498db;
+		font-size: 35px;
+		width: 100px;
+		height: 100px;
+		text-align: center;
+		line-height: 100px;
+		border-radius: 50%;
+		transition: all .3s ease-in-out;
+		&:hover {
+			background-color: #2c3e50;
+			color: #fff;
+		}
 	}
 }
 

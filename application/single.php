@@ -13,7 +13,7 @@
 
 	$current_page = get_page_by_path( 'blog' );
     $current_page->image = wp_get_attachment_url( get_post_thumbnail_id($current_page->ID) );
-    $current_page->image200x850 = aq_resize( $current_page->image, 2000, 850, true ); ?>
+    $current_page->image200x850 = aq_resize( $current_page->image, 2000, 700, true ); ?>
 
 <?php include 'includes/topbar.php' ?>
 
@@ -22,11 +22,11 @@
 		<h1 class="hero__header-title white">Notícia</h1>
 		<hr class="hero__header-divider">
 	</header>
-	<div class="mask"></div>
+
 </section>
 
 <div class="posts__wrapper aside__wrapper row">
-    <div id="posts" class="large-15 columns internal p-r-xl">
+    <div id="posts" class="container small-20 medium-14 columns">
         <article class="post row">
 		    <header class="post__header column">
 		        <div class="post__header-tag-wrapper">
@@ -73,20 +73,22 @@
 		</article>
     </div>
 
-    <aside id="aside" class="large-5 columns">
+    <aside id="aside" class="small-20 medium-6 columns">
         <?php include TEMPLATEPATH.'/search.php'; ?>
         <section class="aside__categories row">
-            <header class="aside__categories-header">
-                <h5 class="aside__categories-header-title">Categorias</h5>
-                <span class="aside__categories-header-line"></span>
-            </header>
-            <ul class="aside__categories-list no-bullet">
-                <?php $args = array( 'orderby' => 'name', 'order' => 'ASC' ); ?>
-                <?php $categories = get_categories($args); ?>
-                <?php foreach($categories as $category) : ?>
-                    <li class="aside__categories-item"><h6 data-href="<?php echo get_category_link( $category->term_id ) ?>"><?php echo $category->name ?></h6></li>
-                <?php endforeach; ?>
-            </ul>
+        	<div class="small-20 column">
+	            <header class="aside__categories-header">
+	                <h5 class="aside__categories-header-title">Categorias</h5>
+	                <span class="aside__categories-header-line"></span>
+	            </header>
+	            <ul class="aside__categories-list no-bullet">
+	                <?php $args = array( 'orderby' => 'name', 'order' => 'ASC' ); ?>
+	                <?php $categories = get_categories($args); ?>
+	                <?php foreach($categories as $category) : ?>
+	                    <li class="aside__categories-item"><h6 data-href="<?php echo get_category_link( $category->term_id ) ?>"><?php echo $category->name ?></h6></li>
+	                <?php endforeach; ?>
+	            </ul>
+            </div>
         </section>
     </aside>
 </div>

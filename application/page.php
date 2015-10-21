@@ -7,7 +7,7 @@
 	$current_page->categories = get_the_category();
 	$current_page->tags = wp_get_post_tags($current_page->ID);
 	$current_page->image = wp_get_attachment_url( get_post_thumbnail_id($current_page->ID) );
-	$current_page->image200x850 = aq_resize( $current_page->image, 2000, 850, true );
+	$current_page->image200x850 = aq_resize( $current_page->image, 2000, 700, true );
 	$current_page->attachments = get_attachments_from_post($current_page);
 	$current_page->post_content = strip_shortcodes($current_page->post_content); ?>
 
@@ -16,7 +16,7 @@
 <?php include 'includes/hero.php' ?>
 
 <div class="posts__wrapper aside__wrapper row">
-	<div id="posts" class="large-20 columns internal">
+	<div id="posts" class="container small-20 medium-14 columns">
 		<article class="post row">
 			<div class="post__text column">
 				<?php echo apply_filters('the_content', $current_page->post_content); ?>
@@ -42,6 +42,7 @@
 			</div>
 		</article>
 	</div>
+	<?php include 'includes/aside.php' ?>
 </div>
 
 <div class="page-gap"></div>

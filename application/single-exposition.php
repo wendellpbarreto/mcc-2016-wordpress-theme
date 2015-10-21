@@ -25,7 +25,7 @@
 			<?php endif ?>
 		</h5>
 	</header>
-	<div class="mask"></div>
+
 </section>
 
 <div class="posts__wrapper aside__wrapper row">

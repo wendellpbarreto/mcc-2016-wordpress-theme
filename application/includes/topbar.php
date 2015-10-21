@@ -12,7 +12,7 @@
 				</li>
 
 				<li class="has-dropdown">
-					<a class="<?php echo $slug == 'historical' || $slug == 'sectors' || $slug == 'team' ? 'active' : '' ?>">Institucional</a>
+					<a class="<?php echo $slug == 'historical' || $slug == 'organogram' || $slug == 'team' ? 'active' : '' ?>">Institucional</a>
 					<ul class="dropdown institutional">
 						<li>
 			                <a href="<?php echo get_permalink( get_page_by_path( 'historical' ) ) ?>">Histórico</a>
@@ -31,9 +31,9 @@
 	                <a href="<?php echo get_permalink( get_page_by_path( 'research' ) ) ?>" class="<?php echo $slug == 'research' ? 'active' : '' ?>">Pesquisa</a>
                 </li>
 
-				<li>
+<!-- 				<li>
 		            <a href="<?php echo get_permalink( get_page_by_path( 'extension' ) ) ?>" class="<?php echo $slug == 'extension' ? 'active' : '' ?>">Extensão</a>
-				</li>
+				</li> -->
 
 				<li class="has-dropdown">
 					<a class="<?php echo $slug == 'paleontology' || $slug == 'archeology' || $slug == 'ethnology' || $slug == 'herbary' ? 'active' : '' ?>">Acervo</a>
@@ -47,12 +47,12 @@
 			            <li>
 			                <a href="<?php echo get_permalink( get_page_by_path( 'ethnology' ) ) ?>">Etnologia</a>
 			            </li>
-			            <li>
+			            <!-- <li>
 			                <a href="<?php echo get_permalink( get_page_by_path( 'herbary' ) ) ?>">Herbário</a>
 						</li>
 						<li>
 			                <a href="<?php echo get_permalink( get_page_by_path( 'documentation-and-memory' ) ) ?>">Documental</a>
-						</li>
+						</li> -->
 					</ul>
 				</li>
 
@@ -84,9 +84,9 @@
 			            <li>
 			                <a href="<?php echo get_permalink( get_page_by_path( 'science-park' ) ) ?>">Parque da Ciência</a>
 			            </li>
-			            <li>
+			            <!-- <li>
 			                <a href="<?php echo get_permalink( get_page_by_path( 'documentation-and-memory' ) ) ?>">Documentação e Memória</a>
-			            </li>
+			            </li> -->
 					</ul>
 				</li>
 			</ul>

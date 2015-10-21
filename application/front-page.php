@@ -54,6 +54,8 @@
 
 <div class="posts__wrapper aside__wrapper row">
 	<section id="posts" class="container small-20 medium-13 columns">
+		<iframe id="poll" width="100%" scrolling="no" height="580px" style="border: none;" src="http://www.opinionstage.com/polls/2302434/poll" frameBorder="0" name="os_frame" webkitallowfullscreen mozallowfullscreen allowfullscreen onlsoad="resizeIframe(this);"></iframe>
+
 		<!-- <div class="posts__featured-carousel">
 			<?php
 				if ($post_query->have_posts()) :
@@ -122,12 +124,37 @@
 				endwhile;
 			endif; ?>
 	</section>
-	<aside id="aside" class="container small-20 medium-7 p-l-xl columns">
-        <?php include TEMPLATEPATH.'/search.php'; ?>
+	<aside id="aside" class="container small-20 medium-7 columns">
+
+		<div class="row">
+			<div class="small-20 column">
+		        <?php include TEMPLATEPATH.'/search.php'; ?>
+			</div>
+		</div>
 
         <div class="aside__facebook-widget row">
-        	<div class="fb-page" data-href="https://www.facebook.com/museucamaracascudoufrn" data-width="500" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
+        	<div class="small-20 column">
+        		<div class="fb-page" data-href="https://www.facebook.com/museucamaracascudoufrn" data-width="500" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
+        	</div>
         </div>
+
+        <div class="row m-t-md">
+        	<div class="small-20 column">
+        	</div>
+        </div>
+
+        <!-- <div class="aside__social row">
+        	<div class="small-16 small-centered column">
+        		<div class="row">
+		        	<div class="small-10 columns text-center">
+		        		<a href="#" target="_blank"><i class="icon-instagram"></i></a>
+		        	</div>
+		        	<div class="small-10 columns text-center">
+		        		<a href="https://twitter.com/mccufrn" target="_blank"><i class="icon-twitter"></i></a>
+		        	</div>
+		        </div>
+        	</div>
+        </div> -->
         <!-- <div class="row">
         	<div class="small-20">
 		        <div class="aside__visit-us m-t-md" data-href="<?php echo get_permalink(get_page_by_path( 'contact' ))?>">
@@ -140,9 +167,9 @@
 		        </div>
         	</div>
         </div> -->
-        <div class="aside__vernaculo-widget row">
-    		<img src="<?php echo get_image( 'vernaculo.jpg' ) ?>" alt="Projeto Vernáculo" class="responsive" data-href="http://vernaculo.ufrn.br/">
-        </div>
+        <!-- <div class="aside__vernaculo-widget row">
+    		<img src="<?php echo get_image( 'vernaculo.jpg' ) ?>" alt="Projeto Vernáculo" class="responsive" data-href="http://vernaculo.ufrn.br/" data-target="_blank">
+        </div> -->
     </aside>
 </div>
 

@@ -54,8 +54,8 @@
 
 <div class="posts__wrapper aside__wrapper row">
 	<section id="posts" class="container small-20 medium-13 columns">
-		<iframe id="poll" width="100%" scrolling="no" height="580px" style="border: none;" src="http://www.opinionstage.com/polls/2302434/poll" frameBorder="0" name="os_frame" webkitallowfullscreen mozallowfullscreen allowfullscreen onlsoad="resizeIframe(this);"></iframe>
-
+<!-- 		<iframe id="poll" width="100%" scrolling="no" height="580px" style="border: none;" src="http://www.opinionstage.com/polls/2302434/poll" frameBorder="0" name="os_frame" webkitallowfullscreen mozallowfullscreen allowfullscreen onlsoad="resizeIframe(this);"></iframe>
+ -->
 		<!-- <div class="posts__featured-carousel">
 			<?php
 				if ($post_query->have_posts()) :

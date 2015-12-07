@@ -85,7 +85,7 @@
 			        $post_query->the_post();
 			        $current_post = get_post();
 			        $current_post->permalink = get_permalink();
-			        $current_post->thumbnail = preg_replace('/(.*)src="(.*)" class(.*)/', "$2", get_the_post_thumbnail($current_post->ID, 'galeria'));
+			        $current_post->thumbnail = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
 		            $current_post->image = aq_resize( $current_post->thumbnail, 1920, 1080, true );
 
 		            if ($current_post->thumbnail): ?>

@@ -85,20 +85,29 @@
 			        $post_query->the_post();
 			        $current_post = get_post();
 			        $current_post->permalink = get_permalink();
-			        $current_post->thumbnail = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
-		            $current_post->image = aq_resize( $current_post->thumbnail, 1920, 1080, true );
 
-		            if ($current_post->thumbnail): ?>
+			        $current_post->thumbnail = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
+		            $current_post->thumbnail = aq_resize( $current_post->thumbnail, 320, 180, true, true, true, false );
+		            
+		            $current_post->thumbnail_image = reset(rwmb_meta( 'thumbnail_image', 'type=image', $current_post->ID ));
+		            $current_post->thumbnail_image = aq_resize( $current_post->thumbnail_image['full_url'], 320, 180, true, true, true, false );
+
+		            if ($current_post->thumbnail || $current_post->thumbnail_image): ?>
 		<div class="post">
 			<div class="row collapse">
 				<div class="small-8 columns">
 					<div class="post__img-crop" data-href="<?php echo $current_post->permalink ?>">
-						<img src="<?php echo $current_post->image ?>" alt="<?php echo $current_post->post_title ?>" class="post__img">
+						<div class="mask"></div>
+			            <?php if ($current_post->thumbnail_image): ?>
+							<img src="<?php echo $current_post->thumbnail_image ?>" alt="<?php echo $current_post->post_title ?>">
+						<?php else: ?>
+							<img src="<?php echo $current_post->thumbnail ?>" alt="<?php echo $current_post->post_title ?>">
+						<?php endif ?>
 					</div>
 				</div>
 				<div class="small-12 columns">
-					<h3 class="post__heading"><a href="<?php echo $current_post->permalink ?>"><?php echo $current_post->post_title ?></a></h3>
-					<p class="post__subheading"><?php echo wp_trim_words($current_post->post_content, 17, '') ?> <span class="post__suspension-points">(...)</span></p>
+					<h3 class="post__heading" data-href="<?php echo $current_post->permalink ?>"><?php echo $current_post->post_title ?></h3>
+					<p class="post__subheading"><?php echo wp_trim_words( strip_shortcodes($current_post->post_content) , 17, '') ?> <span class="post__suspension-points">(...)</span></p>
 					<div class="post__meta">
 						<div class="post__meta-date"><?php echo strftime('%d de %b/%y', strtotime($current_post->post_date)); ?></div>
 						<div class="post__meta-read-more"><a href="<?php echo $current_post->permalink ?>">leia mais</a></div>

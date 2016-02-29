@@ -8,8 +8,6 @@
 	$current_post->tags = wp_get_post_tags($current_post->ID);
 	$current_post->image = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
 	$current_post->image200x850 = aq_resize( $current_post->image, 2000, 850, true );
-	$current_post->attachments = get_attachments_from_post($current_post);
-    $current_post->post_content = strip_shortcode_gallery($current_post->post_content);
 
 	$current_page = get_page_by_path( 'blog' );
     $current_page->image = wp_get_attachment_url( get_post_thumbnail_id($current_page->ID) );

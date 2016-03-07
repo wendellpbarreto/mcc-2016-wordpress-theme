@@ -5,17 +5,31 @@
 	$current_post = get_post();
 	$current_post->permalink = get_permalink();
 	$current_post->categories = get_the_category();
+	$current_post->category = reset($current_post->categories);
 	$current_post->tags = wp_get_post_tags($current_post->ID);
-	$current_post->image = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
-	$current_post->image200x850 = aq_resize( $current_post->image, 2000, 850, true );
+
+	$current_post->main_image = reset(rwmb_meta( 'main_image', 'type=image', $current_post->ID ));
+	$current_post->highlight_image = reset(rwmb_meta( 'highlight_image', 'type=image', $current_post->ID ));
+	$current_post->thumbnail = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
 
 	$current_page = get_page_by_path( 'blog' );
     $current_page->image = wp_get_attachment_url( get_post_thumbnail_id($current_page->ID) );
-    $current_page->image200x850 = aq_resize( $current_page->image, 2000, 700, true ); ?>
+    $current_page->image = aq_resize( $current_page->image, 2000, 700, true, true, true, false); 
+
+    if ( !empty($current_post->main_image) ) {
+    	$current_page->image = $current_post->main_image['full_url'];
+    } elseif ( !empty($current_post->highlight_image) ) {
+    	$current_page->image = $current_post->highlight_image['full_url'];
+    } elseif ( $current_post->thumbnail ) {
+    	$current_page->image = $current_post->thumbnail;
+    }
+
+	$current_page->image = aq_resize( $current_page->image, 2000, 800, true, true, true, false );
+?>
 
 <?php include 'includes/topbar.php' ?>
 
-<section id="hero" class="container" style="background-image: url(<?php echo $current_post->image200x850 ? $current_post->image200x850 : $current_page->image200x850 ?>);">
+<section id="hero" class="container" style="background-image: url(<?php echo $current_page->image ?>);">
 	<header class="hero__header">
 		<h1 class="hero__header-title white">Notícia</h1>
 		<hr class="hero__header-divider">
@@ -28,7 +42,7 @@
         <article class="post row">
 		    <header class="post__header column">
 		        <div class="post__header-tag-wrapper">
-		            <h6 class="post__header-tag"><?php echo $current_post->categories[0]->name; ?></h6>
+		            <h6 class="post__header-tag"><?php echo $current_post->category->name; ?></h6>
 		            <span class="post__header-line"></span>
 		        </div>
 		        <h3 class="post__header-title"><?php echo $current_post->post_title; ?></h3>
@@ -41,7 +55,6 @@
 		            </p>
 		            <div class="post__header-meta-share">
 		                <div class="fb-share-button" data-href="<?php echo $current_post->permalink ?>" data-layout="button_count"></div>
-
 		                <a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo $current_post->permalink ?>"></a>
 		            </div>
 		        </div>
@@ -49,7 +62,7 @@
 		    <div class="post__text column">
 		        <?php echo apply_filters('the_content', $current_post->post_content); ?>
 		    </div>
-			<div class="post__carousel column">
+		    <!--  <div class="post__carousel column">
 				<?php foreach($current_post->attachments as $attachment) : ?>
 					<div class="post__carousel-item">
 						<img class="post__carousel-item-image owl-lazy img-responsive" data-src="<?php echo aq_resize( $attachment->guid, 1040, 500, true ); ?>" alt="<?php echo $attachment->post_title ?>">
@@ -67,7 +80,7 @@
 						</div>
 					</div>
 				<?php endforeach ?>
-			</div>
+			</div> -->
 		</article>
     </div>
 

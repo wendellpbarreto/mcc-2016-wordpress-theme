@@ -6,7 +6,7 @@
     {
         $meta_boxes[] = array(
             'id'         => 'post_metabox',
-            'title'      => '&#x25B4',
+            'title'      => 'CONFIGURAÇÕES ADICIONAIS', //&#x25B4
             'post_types' => 'post' ,
             'context'    => 'normal',
             'priority'   => 'high',
@@ -33,7 +33,7 @@
                 ),
                 array( 
                     'name' => 'É destaque?',
-                    'id' => 'type',
+                    'id' => 'is_highlight',
                     'type' => 'select',
                     'std' => 'true',
                     'desc' => 'Defina se a imagem deve aparecer como destaque na página inicial.',
@@ -44,7 +44,7 @@
                 ),
                 array(
                     'name' => 'Imagem do destaque (2000x800)',
-                    'id' => 'gallery_images',
+                    'id' => 'highlight_image',
                     'type' => 'plupload_image',
                     'desc' => 'Esta imagem será apresentada no slide da página inicial (caso a notícia seja destaque e a imagem do destaque não esteja definida, a imagem principal será usada).',
                     'max_file_uploads' => 1,

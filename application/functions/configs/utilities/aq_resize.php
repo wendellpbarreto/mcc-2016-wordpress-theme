@@ -141,9 +141,9 @@ if(!class_exists('Aq_Resize')) {
                         throw new Aq_Exception('Unable to resize image because image_resize_dimensions() failed');
                     }
                     // Else check if cache exists.
-                    // elseif ( file_exists( $destfilename ) && getimagesize( $destfilename ) ) {
-                    //     $img_url = "{$upload_url}{$dst_rel_path}-{$suffix}.{$ext}";
-                    // }
+                    elseif ( file_exists( $destfilename ) && getimagesize( $destfilename ) ) {
+                        $img_url = "{$upload_url}{$dst_rel_path}-{$suffix}.{$ext}";
+                    }
                     // Else, we resize the image and return the new resized image url.
                     else {
 

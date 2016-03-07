@@ -11,6 +11,8 @@ var engineCarousel = function(){
 		dots: true,
 	});
 
+
+
 	var featuredPostsCarousel = $('#posts .posts__featured-carousel');
 
 	featuredPostsCarousel.owlCarousel({
@@ -47,8 +49,8 @@ var engineCarousel = function(){
 		margin: 1,
 		// loop: true,
 		items: 6,
-		center: true,
-  })
+		// center: true,
+	})
 	.on('click', '.owl-item', function () {
 		$sync1.trigger('to.owl.carousel', [$(this).index(), duration, true]);
 
@@ -61,6 +63,29 @@ var engineCarousel = function(){
 		}
 	});
 
+	var wpCarousel = $('.gallery');
+
+	wpCarousel.find('br').remove();
+	wpCarousel.find('.gallery-item').each(function() {
+		img = $(this).find('img');
+		subtitle = img.attr('alt');
+		subtitleHtml = '<p class="gallery-title">' + subtitle + '<p>';
+
+		$(this).append(subtitleHtml);
+	});
+
+	wpCarousel.owlCarousel({
+		items: 1,
+		lazyLoad: true,
+		autoplay: true,
+		// loop: true,
+		animateOut: 'fadeOut',
+		animateIn: 'fadeIn',
+		// dots: true,
+		nav: true,
+		navClass: ['owl-prev' , 'owl-next'],
+		navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+	});
 }
 
 $(document).ready(function(){

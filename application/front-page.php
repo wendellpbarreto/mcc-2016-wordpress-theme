@@ -10,29 +10,54 @@
 	$args = array(
 		'post_type'   		=> 'post',
 		'posts_per_page'    => 4,
+		'meta_query' => array(
+			array(
+				'key'     => 'is_highlight',
+				'compare' => '=',
+				'value'   => 'true',
+			),
+		),
 	);
-	$post_query = new WP_Query( $args ); ?>
+	$highlight_post_query = new WP_Query( $args ); 
+
+	$args = array(
+		'post_type'   		=> 'post',
+		'posts_per_page'    => 4,
+
+	);
+	$post_query = new WP_Query( $args ); 
+?>
 
 <?php include 'includes/topbar.php' ?>
 
-<section id="<?php echo ($banner_query->post_count > 1) ? 'carousel' : '' ?>" class="container show-for-medium-up">
+<section id="<?php echo ($banner_query->post_count + $highlight_post_query->post_count > 1) ? 'carousel' : '' ?>" class="container show-for-medium-up">
+
 	<?php
-		if ($post_query->have_posts()) :
-		    while ($post_query->have_posts()) :
-		        $post_query->the_post();
+		if ($highlight_post_query->have_posts()) :
+		    while ($highlight_post_query->have_posts()) :
+		        $highlight_post_query->the_post();
 		        $current_post = get_post();
 		        $current_post->permalink = get_permalink();
-		        $current_post->image = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
-	            $current_post->image1920x1080 = aq_resize( $current_post->image, 2000, 700, true, true, true);
 
-	            if ($current_post->post_primary_featured == "true" && $current_post->image1920x1080): ?>
+		        $current_post->highligh_image = reset(rwmb_meta( 'highligh_image', 'type=image', $current_post->ID ));
+		        $current_post->main_image = reset(rwmb_meta( 'main_image', 'type=image', $current_post->ID ));
+		        $current_post->image = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
+
+		        if ( !empty($current_post->highligh_image) ) {
+		        	$current_post->image = $current_post->highligh_image['full_url'];
+		        } elseif ( !empty($current_post->main_image) ) {
+		        	$current_post->image = $current_post->main_image['full_url'];
+		        }
+
+		        $current_post->image = aq_resize( $current_post->image, 2000, 800, true, true, true, false );
+	?>
 	<div class="carousel__item" data-href="<?php echo $current_post->permalink ?>">
-		<img data-src="<?php echo $current_post->image1920x1080 ?>" alt="<?php echo $current_post->post_title ?>" class="owl-lazy">
+		<img data-src="<?php echo $current_post->image ?>" alt="<?php echo $current_post->post_title ?>" class="owl-lazy">
 	</div>
 	<?php
-			endif;
-		endwhile;
-	endif; ?>
+			endwhile;
+		endif;
+	?>
 
 	<?php
 		if ($banner_query->have_posts()) :
@@ -53,61 +78,47 @@
 </section>
 
 <div class="posts__wrapper aside__wrapper row">
+	
 	<section id="posts" class="container small-20 medium-13 columns">
-<!-- 		<iframe id="poll" width="100%" scrolling="no" height="580px" style="border: none;" src="http://www.opinionstage.com/polls/2302434/poll" frameBorder="0" name="os_frame" webkitallowfullscreen mozallowfullscreen allowfullscreen onlsoad="resizeIframe(this);"></iframe>
- -->
-		<!-- <div class="posts__featured-carousel">
-			<?php
-				if ($post_query->have_posts()) :
-				    while ($post_query->have_posts()) :
-				        $post_query->the_post();
-				        $current_post = get_post();
-				        $current_post->permalink = get_permalink();
-				        $current_post->thumbnail = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
-			            $current_post->image = aq_resize( $current_post->thumbnail, 1920, 1080, true );
-
-			            if ($current_post->post_secundary_featured == "true"): ?>
-			<div class="post__featured" data-href="<?php echo $current_post->permalink ?>">
-			 	<img data-src="<?php echo $current_post->image ?>" alt="<?php echo $current_post->post_title ?>" class="post__featured-image owl-lazy">
-			 	<header class="post__featured-header">
-			 		<h6 class="post__featured-header-heading"><?php echo $current_post->post_title ?></h6>
-			 	</header>
-			</div>
-			<?php
-						endif;
-					endwhile;
-				endif; ?>
-		</div> -->
-
+	
 		<?php
 			if ($post_query->have_posts()) :
 			    while ($post_query->have_posts()) :
 			        $post_query->the_post();
-			        $current_post = get_post();
-			        $current_post->permalink = get_permalink();
+    		        $current_post = get_post();
+    		        $current_post->permalink = get_permalink();
+					$current_post->categories = get_the_category();
+					$current_post->category = reset( $current_post->categories );
 
-			        $current_post->thumbnail = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
-		            $current_post->thumbnail = aq_resize( $current_post->thumbnail, 320, 180, true, true, true, false );
-		            
-		            $current_post->thumbnail_image = reset(rwmb_meta( 'thumbnail_image', 'type=image', $current_post->ID ));
-		            $current_post->thumbnail_image = aq_resize( $current_post->thumbnail_image['full_url'], 320, 180, true, true, true, false );
+    		        $current_post->thumbnail_image = reset(rwmb_meta( 'thumbnail_image', 'type=image', $current_post->ID ));
+    		        $current_post->main_image = reset(rwmb_meta( 'main_image', 'type=image', $current_post->ID ));
+    		        $current_post->image = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
 
-		            if ($current_post->thumbnail || $current_post->thumbnail_image): ?>
+    		        if ( !empty($current_post->thumbnail_image) ) {
+    		        	$current_post->image = $current_post->thumbnail_image['full_url'];
+    		        }  elseif ( !empty($current_post->main_image) ) {
+    		        	$current_post->image = $current_post->main_image['full_url'];
+    		        }
+
+    		        $current_post->image = aq_resize( $current_post->image, 320, 180, true, true, true, false );
+
+		            if ($current_post->image): 
+		?>
 		<div class="post">
 			<div class="row collapse">
 				<div class="small-8 columns">
-					<div class="post__img-crop" data-href="<?php echo $current_post->permalink ?>">
-						<div class="mask"></div>
-			            <?php if ($current_post->thumbnail_image): ?>
-							<img src="<?php echo $current_post->thumbnail_image ?>" alt="<?php echo $current_post->post_title ?>">
-						<?php else: ?>
-							<img src="<?php echo $current_post->thumbnail ?>" alt="<?php echo $current_post->post_title ?>">
-						<?php endif ?>
-					</div>
+
+					<figure data-href="<?php echo $current_post->permalink ?>">
+						<img src="<?php echo $current_post->image ?>">
+						<figcaption>
+							<h4><?php echo $current_post->category->name ?></h4>
+						</figcaption>
+					</figure>
+					
 				</div>
 				<div class="small-12 columns">
 					<h3 class="post__heading" data-href="<?php echo $current_post->permalink ?>"><?php echo $current_post->post_title ?></h3>
-					<p class="post__subheading"><?php echo wp_trim_words( strip_shortcodes($current_post->post_content) , 17, '') ?> <span class="post__suspension-points">(...)</span></p>
+					<p class="post__subheading"><?php echo wp_trim_words( strip_shortcodes($current_post->post_content), 17, '') ?> <span class="post__suspension-points">(...)</span></p>
 					<div class="post__meta">
 						<div class="post__meta-date"><?php echo strftime('%d de %b/%y', strtotime($current_post->post_date)); ?></div>
 						<div class="post__meta-read-more"><a href="<?php echo $current_post->permalink ?>">leia mais</a></div>
@@ -131,8 +142,11 @@
 		<?php
 					endif;
 				endwhile;
-			endif; ?>
+			endif; 
+		?>
+
 	</section>
+
 	<aside id="aside" class="container small-20 medium-7 columns">
 
 		<div class="row">

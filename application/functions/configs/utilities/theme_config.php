@@ -1,5 +1,16 @@
 <?php
 
+update_option('image_default_link_type','none');
+
+function gallery_attrs( $out, $pairs, $atts ) {
+    $out['columns'] = '1';
+    $out['size'] = 'full';
+    $out['link'] = 'none';
+    return $out;
+}
+
+add_filter( 'shortcode_atts_gallery', 'gallery_attrs', 10, 3 );
+
 function execute_theme_config(){
 	global $theme_config;
 

@@ -2,19 +2,14 @@
 	get_header();
 
 	$current_page = get_page_by_path( 'blog' );
+	$current_page->post_title = "Notícias";
 	$current_page->image = wp_get_attachment_url( get_post_thumbnail_id($current_page->ID) );
 	$current_page->image = aq_resize( $current_page->image, 2000, 800, true, true, true, false ); 
 ?>
 
 <?php include 'includes/topbar.php' ?>
 
-<section id="hero" class="container" style="background-image: url(<?php echo $current_page->image200x850 ?>);">
-	<header class="hero__header">
-		<h1 class="hero__header-title white">Notícias</h1>
-		<hr class="hero__header-divider">
-	</header>
-
-</section>
+<?php include 'includes/hero.php' ?>
 
 <div class="posts__wrapper aside__wrapper row">
     <div id="posts" class="small-20 medium-13 columns internal">

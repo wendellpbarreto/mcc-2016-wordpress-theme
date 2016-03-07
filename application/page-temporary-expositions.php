@@ -5,9 +5,8 @@
 	$current_page = get_post();
 	$current_page->permalink = get_permalink();
 	$current_page->categories = get_the_category();
-	$current_page->tags = wp_get_post_tags($current_page->ID);
 	$current_page->image = wp_get_attachment_url( get_post_thumbnail_id($current_page->ID) );
-	$current_page->image200x850 = aq_resize( $current_page->image, 2000, 700, true );
+	$current_page->image = aq_resize( $current_page->image, 2000, 800, true, true, true, false );
 
 	$temporary_expositions_category = get_category_by_slug('temporary-expositions');
   	$temporary_expositions_category_id = $temporary_expositions_category->term_id;

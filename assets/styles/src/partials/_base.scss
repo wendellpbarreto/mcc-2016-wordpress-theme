@@ -132,6 +132,13 @@ img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 	}
 }
 
+div[class^="attachment"], div[class*="attachment"] {
+	.wp-caption-text {
+		font-size: 12px;
+    	text-align: center;
+	}
+}
+
 h5 {
     color: $blue;
 }

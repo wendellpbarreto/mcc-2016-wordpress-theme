@@ -7238,6 +7238,10 @@ img.aligncenter {
     opacity: 1;
     right: 0; }
 
+div[class^="attachment"] .wp-caption-text, div[class*="attachment"] .wp-caption-text {
+  font-size: 12px;
+  text-align: center; }
+
 h5 {
   color: #6190a6; }
 

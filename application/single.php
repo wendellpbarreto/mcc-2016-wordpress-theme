@@ -14,7 +14,6 @@
 
 	$current_page = get_page_by_path( 'blog' );
     $current_page->image = wp_get_attachment_url( get_post_thumbnail_id($current_page->ID) );
-    $current_page->image = aq_resize( $current_page->image, 2000, 700, true, true, true, false); 
 
     if ( !empty($current_post->main_image) ) {
     	$current_page->image = $current_post->main_image['full_url'];

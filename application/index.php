@@ -2,8 +2,9 @@
 	get_header();
 
 	$current_page = get_page_by_path( 'blog' );
-    $current_page->image = wp_get_attachment_url( get_post_thumbnail_id($current_page->ID) );
-    $current_page->image200x850 = aq_resize( $current_page->image, 2000, 700, true ); ?>
+	$current_page->image = wp_get_attachment_url( get_post_thumbnail_id($current_page->ID) );
+	$current_page->image = aq_resize( $current_page->image, 2000, 800, true, true, true, false ); 
+?>
 
 <?php include 'includes/topbar.php' ?>
 

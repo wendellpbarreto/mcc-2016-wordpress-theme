@@ -30,17 +30,18 @@
 
 <?php include 'includes/topbar.php' ?>
 
-<section id="<?php echo ($banner_query->post_count + $highlight_post_query->post_count > 1) ? 'carousel' : '' ?>" class="container show-for-medium-up">
+<section id="hero" class="main">
+	<div class="carousel">
 
-	<?php
+		<?php
 		if ($highlight_post_query->have_posts()) :
 		    while ($highlight_post_query->have_posts()) :
 		        $highlight_post_query->the_post();
 		        $current_post = get_post();
 		        $current_post->permalink = get_permalink();
 
-		        $current_post->highligh_image = reset(rwmb_meta( 'highligh_image', 'type=image', $current_post->ID ));
-		        $current_post->main_image = reset(rwmb_meta( 'main_image', 'type=image', $current_post->ID ));
+		        $current_post->highligh_image = reset( rwmb_meta( 'highligh_image', 'type=image', $current_post->ID) );
+		        $current_post->main_image = reset( rwmb_meta( 'main_image', 'type=image', $current_post->ID) );
 		        $current_post->image = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
 
 		        if ( !empty($current_post->highligh_image) ) {
@@ -50,31 +51,36 @@
 		        }
 
 		        $current_post->image = aq_resize( $current_post->image, 2000, 800, true, true, true, false );
-	?>
-	<div class="carousel__item" data-href="<?php echo $current_post->permalink ?>">
-		<img data-src="<?php echo $current_post->image ?>" alt="<?php echo $current_post->post_title ?>" class="owl-lazy">
-	</div>
-	<?php
-			endwhile;
-		endif;
-	?>
+		?>
+		<div class="carousel__item" data-href="<?php echo $current_post->permalink ?>">
+			<img data-src="<?php echo $current_post->image ?>" alt="<?php echo $current_post->post_title ?>" class="owl-lazy">
+		</div>
+		<?php
+				endwhile;
+			endif;
+		?>
 
-	<?php
-		if ($banner_query->have_posts()) :
-		    while ($banner_query->have_posts()) :
-		        $banner_query->the_post();
-		        $current_post = get_post();
-		        $current_post->image = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
-	            $current_post->image1920x1080 = aq_resize( $current_post->image, 2000, 700, true, true );
+		<?php
+			if ($banner_query->have_posts()) :
+			    while ($banner_query->have_posts()) :
+			        $banner_query->the_post();
+			        $current_post = get_post();
+			        $current_post->image = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
+		            $current_post->image = aq_resize( $current_post->image, 2000, 800, true, true, true, false );
 
-	            if ($current_post->image1920x1080): ?>
-	<div class="carousel__item">
-		<img data-src="<?php echo $current_post->image1920x1080 ?>" alt="<?php echo $current_post->post_title ?>" class="owl-lazy">
-	</div>
-	<?php
-				endif;
-			endwhile;
-		endif; ?>
+		            if ($current_post->image): 
+		?>
+		<div class="carousel__item">
+			<img data-src="<?php echo $current_post->image ?>" alt="<?php echo $current_post->post_title ?>" class="owl-lazy">
+		</div>
+		<?php
+					endif;
+				endwhile;
+			endif; 
+		?>
+	</div>	
+
+	<?php include 'includes/topbar-dropdowns.php' ?>
 </section>
 
 <div class="posts__wrapper aside__wrapper row">
@@ -104,6 +110,7 @@
 
 		            if ($current_post->image): 
 		?>
+
 		<div class="post">
 			<div class="row collapse">
 				<div class="small-8 columns">
@@ -126,7 +133,9 @@
 				</div>
 			</div>
 		</div>
+
 		<?php 		else: ?>
+
 		<div class="post">
 			<div class="row collapse">
 				<div class="small-20 columns">
@@ -139,6 +148,7 @@
 				</div>
 			</div>
 		</div>
+		
 		<?php
 					endif;
 				endwhile;

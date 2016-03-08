@@ -1,7 +1,7 @@
-var engineCarousel = function(){
-	var carousel = $('#carousel');
+var engineCarousel = function() {
 
-	carousel.owlCarousel({
+	var heroCarousel = $('section#hero div.carousel');
+	heroCarousel.owlCarousel({
 		items: 1,
 		lazyLoad: true,
 		autoplay: true,
@@ -9,6 +9,9 @@ var engineCarousel = function(){
 		animateOut: 'fadeOut',
 		animateIn: 'fadeIn',
 		dots: true,
+		// nav: true,
+		navClass: ['owl-prev' , 'owl-next'],
+		navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
 	});
 
 

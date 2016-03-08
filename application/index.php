@@ -21,7 +21,16 @@
 	                $current_post->permalink = get_permalink();
                     $current_post->categories = get_the_category();
 	                $current_post->tags = wp_get_post_tags($current_post->ID);
-	                $current_post->thumbnail = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
+					
+					$current_post->thumbnail_image = reset(rwmb_meta( 'thumbnail_image', 'type=image', $current_post->ID ));
+	                $current_post->image = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
+
+	                if ( !empty($current_post->thumbnail_image) ) {
+	                	$current_post->image = $current_post->thumbnail_image['full_url'];
+	                }
+
+					$current_post->image = aq_resize( $current_post->image, 800, 450, true, true, true, false );
+
             ?>
             <article class="post row">
 			    <header class="post__header column">
@@ -40,7 +49,7 @@
 			        </div>
 			    </header>
 			    <div class="post__crop column" data-href="<?php echo $current_post->permalink ?>">
-			        <img src="<?php echo $current_post->thumbnail ?>" alt="" class="img-responsive"/>
+			        <img src="<?php echo $current_post->image ?>" alt="" class="img-responsive"/>
 			    </div>
 			</article>
             <?php

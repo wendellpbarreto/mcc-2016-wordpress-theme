@@ -19,7 +19,7 @@
                     'max_file_uploads' => 1,
                 ),
                 array( 
-                    'name' => 'Miniatura (320x180)',
+                    'name' => 'Miniatura (800x450)',
                     'id' => 'thumbnail_image',
                     'type' => 'plupload_image',
                     'desc' => 'Miniatura apresentada na listagem de notícias.',

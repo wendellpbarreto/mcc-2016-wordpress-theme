@@ -25,5 +25,17 @@
 
         <!-- google maps api -->
 		<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDpeBjRT8swOK43cpc1-NmpdRoTy4eQR9A&sensor=false"></script>
+
+		<script type="text/javascript">
+		  var _hta = {'_setToken': 'cac5752ab56f46d9e0c0ac74921c3ca8dc991ed7','_htException': 'HandTalk_EXCECAO'};
+		  (function() {
+		    var ht = document.createElement('script'); ht.type = 'text/javascript'; ht.async = true;
+		    ht.src = '//api.handtalk.me/handtalk_init.js';
+		    var s = document.getElementsByTagName('script')[0];
+		    s.parentNode.appendChild(ht);
+		  })();
+		  //  HandTalk_EXCECAO -> ID ou CLASSE do elemento que desejar exceção, separados por virgula
+		  //  Exemplo:  '#menu,.listas,.formulario,#carrousel'
+		</script>
 	</body>
 </html>

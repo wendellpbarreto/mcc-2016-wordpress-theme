@@ -18,14 +18,14 @@
 			),
 		),
 	);
-	$highlight_post_query = new WP_Query( $args ); 
+	$highlight_post_query = new WP_Query( $args );
 
 	$args = array(
 		'post_type'   		=> 'post',
 		'posts_per_page'    => 4,
 
 	);
-	$post_query = new WP_Query( $args ); 
+	$post_query = new WP_Query( $args );
 ?>
 
 <?php include 'includes/topbar.php' ?>
@@ -68,7 +68,7 @@
 			        $current_post->image = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
 		            $current_post->image = aq_resize( $current_post->image, 2000, 800, true, true, true, false );
 
-		            if ($current_post->image): 
+		            if ($current_post->image):
 		?>
 		<div class="carousel__item">
 			<img data-src="<?php echo $current_post->image ?>" alt="<?php echo $current_post->post_title ?>" class="owl-lazy">
@@ -76,17 +76,17 @@
 		<?php
 					endif;
 				endwhile;
-			endif; 
+			endif;
 		?>
-	</div>	
+	</div>
 
 	<?php include 'includes/topbar-dropdowns.php' ?>
 </section>
 
 <div class="posts__wrapper aside__wrapper row">
-	
+
 	<section id="posts" class="container small-20 medium-13 columns">
-	
+
 		<?php
 			if ($post_query->have_posts()) :
 			    while ($post_query->have_posts()) :
@@ -108,7 +108,7 @@
 
     		        $current_post->image = aq_resize( $current_post->image, 320, 180, true, true, true, false );
 
-		            if ($current_post->image): 
+		            if ($current_post->image):
 		?>
 
 		<div class="post">
@@ -121,7 +121,7 @@
 							<h4><?php echo $current_post->category->name ?></h4>
 						</figcaption>
 					</figure>
-					
+
 				</div>
 				<div class="small-12 columns">
 					<h3 class="post__heading" data-href="<?php echo $current_post->permalink ?>"><?php echo $current_post->post_title ?></h3>
@@ -148,11 +148,11 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<?php
 					endif;
 				endwhile;
-			endif; 
+			endif;
 		?>
 
 	</section>
@@ -167,7 +167,7 @@
 
         <div class="aside__facebook-widget row">
         	<div class="small-20 column">
-        		<div class="fb-page" data-href="https://www.facebook.com/museucamaracascudoufrn" data-width="500" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
+        		<div class="fb-page" data-href="https://www.facebook.com/mccufrn" data-width="500" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
         	</div>
         </div>
 

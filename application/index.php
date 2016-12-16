@@ -52,7 +52,7 @@
 		</main>
 		<aside>
 			<?php include 'includes/aside/search.php' ?>
-			<?php include 'includes/aside/categories-and-pages.php' ?>
+			<?php include 'includes/aside/post-categories.php' ?>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
 				<polygon points="0 10, 0 0, 100 0" />
 			</svg>

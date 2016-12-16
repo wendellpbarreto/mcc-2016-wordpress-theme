@@ -4,7 +4,7 @@
         <script src="<?php echo get_assets_root_uri(); ?>/vendor/owl.carousel/owl.carousel.min.js"></script>
         <script src="<?php echo get_assets_root_uri(); ?>/vendor/classie/classie.js"></script>
 
-		<?php wp_footer(); ?>
+        <?php wp_footer(); ?>
 
         <!-- scripts::main -->
         <script src="<?php echo get_assets_root_uri(); ?>/scripts/main.min.js"></script>
@@ -12,11 +12,11 @@
         <!-- facebook api -->
         <div id="fb-root"></div>
         <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
-          fjs.parentNode.insertBefore(js, fjs);
+        	var js, fjs = d.getElementsByTagName(s)[0];
+        	if (d.getElementById(id)) return;
+        	js = d.createElement(s); js.id = id;
+        	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1097600120328629";
+        	fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
 
         <!-- twitter api -->
@@ -24,18 +24,6 @@
         </script>
 
         <!-- google maps api -->
-		<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDpeBjRT8swOK43cpc1-NmpdRoTy4eQR9A&sensor=false"></script>
-
-		<script type="text/javascript">
-		  var _hta = {'_setToken': 'cac5752ab56f46d9e0c0ac74921c3ca8dc991ed7','_htException': 'HandTalk_EXCECAO'};
-		  (function() {
-		    var ht = document.createElement('script'); ht.type = 'text/javascript'; ht.async = true;
-		    ht.src = '//api.handtalk.me/handtalk_init.js';
-		    var s = document.getElementsByTagName('script')[0];
-		    s.parentNode.appendChild(ht);
-		  })();
-		  //  HandTalk_EXCECAO -> ID ou CLASSE do elemento que desejar exceção, separados por virgula
-		  //  Exemplo:  '#menu,.listas,.formulario,#carrousel'
-		</script>
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDpeBjRT8swOK43cpc1-NmpdRoTy4eQR9A&sensor=false"></script>
 	</body>
-</html>
+	</html>

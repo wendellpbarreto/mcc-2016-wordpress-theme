@@ -1,56 +1,48 @@
 <?php
 
-    add_filter( 'rwmb_meta_boxes', 'post_register_meta_boxes' );
-
-    function post_register_meta_boxes( $meta_boxes )
-    {
-        $meta_boxes[] = array(
-            'id'         => 'post_metabox',
-            'title'      => 'CONFIGURAÇÕES ADICIONAIS', //&#x25B4
-            'post_types' => 'post' ,
-            'context'    => 'normal',
-            'priority'   => 'high',
-            'fields' => array(
-                array( 
-                    'name' => 'Imagem principal (2000x800)',
-                    'id' => 'main_image',
-                    'type' => 'plupload_image',
-                    'desc' => 'Esta é a capa da página interna da notícia.',
-                    'max_file_uploads' => 1,
-                ),
-                array( 
-                    'name' => 'Miniatura (800x450)',
-                    'id' => 'thumbnail_image',
-                    'type' => 'plupload_image',
-                    'desc' => 'Miniatura apresentada na listagem de notícias.',
-                    'max_file_uploads' => 1,
-                ),
-                array(
-                    'type' => 'heading',
-                    'name' => 'CONFIGURAÇÕES DE DESTAQUE',
-                    'id'   => 'fake_id1', 
-                    'desc' => '',
-                ),
-                array( 
-                    'name' => 'É destaque?',
-                    'id' => 'is_highlight',
-                    'type' => 'select',
-                    'std' => 'true',
-                    'desc' => 'Defina se a imagem deve aparecer como destaque na página inicial.',
-                    'options' => array(
-                        "true" => "Sim",
-                        "false" => "Não",
-                    ),
-                ),
-                array(
-                    'name' => 'Imagem do destaque (2000x800)',
-                    'id' => 'highlight_image',
-                    'type' => 'plupload_image',
-                    'desc' => 'Esta imagem será apresentada no slide da página inicial (caso a notícia seja destaque e a imagem do destaque não esteja definida, a imagem principal será usada).',
-                    'max_file_uploads' => 1,
-                ),
-            )
-        );
-        return $meta_boxes;
+add_filter( 'post_type_link', 'modify_post_permalink', 1, 2 );
+function modify_post_permalink( $post_link, $id = 0 ){
+    $post = get_post($id);
+    if ( is_object( $post ) && $post->post_type == 'post' ){
+        $terms = wp_get_object_terms( $post->ID, 'category' );
+        if( $terms ){
+            return str_replace( '%category%' , $terms[0]->slug , $post_link );
+        }
     }
-    
+    return $post_link;
+}
+
+add_filter( 'rwmb_meta_boxes', 'post_register_meta_boxes' );
+function post_register_meta_boxes( $meta_boxes ) {
+    $meta_boxes[] = array(
+        'title'    => 'DESTAQUE',
+        'id'       => 'post_metabox',
+        'pages'    => array( 'post' ),
+        'context'  => 'normal',
+        'priority' => 'low',
+        'fields' => array(
+            array(
+                'type' => 'text',
+                'name' => 'Fonte da Notícia',
+                'id' => 'post_source',
+                'desc' => '',
+                'size' => '50'
+            ),
+            array(
+                'type' => 'textarea',
+                'name' => 'Legenda da Foto',
+                'id' => 'post_legend',
+                'desc' => '',
+                'size' => '50'
+            ),
+            array(
+                'type' => 'text',
+                'name' => 'Créditos da Foto',
+                'id' => 'post_credits',
+                'desc' => '',
+                'size' => '50'
+            ),
+        )
+    );
+  return $meta_boxes;
+}

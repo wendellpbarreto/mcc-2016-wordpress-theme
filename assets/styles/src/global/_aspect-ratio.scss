@@ -1,0 +1,8 @@
+@mixin aspect-ratio($width, $height) {
+    max-width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-bottom: ($height / $width) * 100%;
+}

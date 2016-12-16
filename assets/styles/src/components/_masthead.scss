@@ -1,0 +1,132 @@
+header#masthead {
+	width: 100%;
+	display: flex;
+	justify-content: space-betweeen;
+	align-items: flex-start;
+	max-height: 115px;
+	.logo-wrapper, a.contact-anchor {
+		background-color: #3498db;
+	}
+	.logo-wrapper {
+		flex-basis: 240px;
+		padding: 18px 40px;
+		height: 110px;
+		img {
+			max-width: 100%;
+		}
+	}
+	a.contact-anchor {
+		color: #fff;
+		font-weight: 700;
+		padding: 25px 40px;
+		line-height: 1;
+	}
+}
+header#masthead nav.main-navigation {
+	flex-grow: 1;
+	list-style: none;
+	display: flex;
+	position: relative;
+	& > li {
+		flex-grow: 1;
+		flex-basis: 20%;
+		text-align: center;
+		padding-top: 28px;
+		padding-bottom: 35px;
+		border-top: 7px solid transparent;
+		transition: border-color 0.3s ease-in-out;
+		cursor: pointer;
+		& > a {
+			line-height: 20px;
+			border-right: 1px solid #eee;
+			display: block;
+			color: #2c3e50;
+			font-weight: 600;
+			padding-top: 10px;
+			text-transform: uppercase;
+			padding-bottom: 10px;
+			letter-spacing: 0.05rem;
+			font-size: 14px;
+			transition: color 0.3s ease-in-out;
+		}
+	}
+	li.has-dropdown {
+		ul.dropdown {
+			right: 0;
+			left: 0;
+			width: 100%;
+			padding: 0;
+			margin: 0;
+			display: none;
+			background-color: #fff;
+			position: absolute;
+			top: 100%;
+			list-style: none;
+			z-index: 100;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			align-items: flex-start;
+			&:before {
+				content: " ";
+				display: block;
+				background-color: #FFF;
+				width: 300%;
+				position: absolute;
+				height: 100%;
+				left: -100%;
+				border-bottom: 1px solid #f4f4f4;
+			}
+			li {
+				flex-basis: 20%;
+				display: inline-block;
+				a {
+					@include aspect-ratio(4, 3);
+
+					position: relative;
+					display: block;
+					font-size: 13px;
+					color: #2c3e50;
+					font-weight: 600;
+					line-height: 1.2;
+					span {
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translateY(-50%) translateX(-50%);
+					}
+					i {
+						display: inline-block;
+						border-radius: 50%;
+						background-color: #f4f4f4;
+						height: 50px;
+						width: 50px;
+						line-height: 50px;
+						color: #2c3e50;
+						margin-bottom: 5px;
+					}
+					&:hover {
+						background-color: #f4f4f4;
+						i {
+							background-color: $blue;
+							color: #fff;
+						}
+					}
+				}
+			}
+		}
+		&:hover {
+			ul.dropdown {
+				display: flex;
+			}
+		}
+	}
+	li.active, li:hover {
+		border-color: #3498db;
+		a {
+			color: #3498db;
+		}
+	}
+	li:last-child a {
+		border-color: transparent;
+	}
+}

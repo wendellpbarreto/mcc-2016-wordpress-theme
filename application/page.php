@@ -1,36 +1,29 @@
-<?php
-	get_header();
+<?php get_header() ?>
 
-	the_post();
-	$current_page = get_post();
-	$current_page->permalink = get_permalink();
-	$current_page->categories = get_the_category();
-	$current_page->image = wp_get_attachment_url( get_post_thumbnail_id($current_page->ID) );
-	$current_page->image = aq_resize( $current_page->image, 2000, 800, true, true, true, false );
-?>
+<?php $current_page = get_post() ?>
 
-<?php include 'includes/topbar.php' ?>
+<div class="page-wrapper">
+	<?php include 'includes/masthead.php' ?>
 
-<?php include 'includes/hero.php' ?>
-
-<div class="posts__wrapper aside__wrapper row">
-	<div id="posts" class="container small-20 medium-14 columns">
-		<article class="post row">
-			<div class="post__text column">
-				<?php echo apply_filters('the_content', $current_page->post_content); ?>
-			</div>
-		</article>
+	<div class="main-wrapper with-aside">
+		<header id="page-header">
+			<h1 class="page-title"><?php echo $current_page->post_title ?></h1>
+		</header>
+		<main>
+			<article class="post">
+				<div class="content">
+					<?php echo apply_filters('the_content', $current_page->post_content); ?>
+				</div>
+			</article>
+		</main>
+		<aside>
+			<?php include 'includes/aside/search.php' ?>
+			<?php include 'includes/aside/categories-and-pages.php' ?>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
+				<polygon points="0 10, 0 0, 100 0" />
+			</svg>
+		</aside>
 	</div>
-	<?php include 'includes/aside.php' ?>
 </div>
 
-<div class="page-gap"></div>
-
-<?php include 'includes/footer.php' ?>
-
 <?php get_footer() ?>
-
-<!-- scripts::animate -->
-<script>
-	new cbpScroller(document.getElementById('footer'));
-</script>

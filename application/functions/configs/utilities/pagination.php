@@ -1,13 +1,16 @@
 <?php
 
-function pagination($pages = '', $range = 2) {
-	$showitems = ($range * 2)+1;
+function pagination($range = 2, $wp_query = null) {
+	$pages = '';
+	$showitems = ( $range * 2 ) + 1;
 
 	global $paged;
 	if ( empty($paged) ) $paged = 1;
 
 	if ( $pages == '' ) {
-		global $wp_query;
+		if ($wp_query == null) {
+			global $wp_query;
+		}
 		$pages = $wp_query->max_num_pages;
 		if(!$pages) {
 			$pages = 1;
@@ -39,6 +42,6 @@ function pagination($pages = '', $range = 2) {
 			echo '<a href="'.get_pagenum_link($pages).'" class="pagination__arrow">&raquo;</a>';
 		}
 
-		echo '</div>\n';
+		echo '</div>';
 	}
 }

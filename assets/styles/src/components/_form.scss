@@ -1,0 +1,45 @@
+form {
+	.form-group {
+		padding-bottom: 20px;
+	}
+	input[type=text], input[type=email], textarea {
+		background-color: $white;
+		padding: 23px 20px;
+		font-size: 15px;
+		border: 1px solid #3498db;
+		margin: 0;
+		color: $blue;
+		font-weight: 700;
+		&:focus, &:hover, &:active {
+			background-color: #ecf0f1;
+			color: $blue;
+		}
+	}
+	.btn {
+		background-color: #FFF;
+		color: #3498db;
+		padding: 20px;
+		margin: 0;
+		font-size: 14px;
+		font-weight: 700;
+		text-transform: uppercase;
+		display: inline-block;
+		border: 1px solid $blue;
+		&:hover {
+			background-color: $blue;
+			color: #fff;
+		}
+	}
+	*::-webkit-input-placeholder {
+		color: $mlighter-gray;
+	}
+	*:-moz-placeholder {
+		color: $mlighter-gray;
+	}
+	*::-moz-placeholder {
+		color: $mlighter-gray;
+	}
+	*:-ms-input-placeholder {
+		color: $mlighter-gray;
+	}
+}

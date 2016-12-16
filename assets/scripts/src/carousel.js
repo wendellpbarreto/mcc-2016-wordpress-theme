@@ -1,96 +1,54 @@
-var engineCarousel = function() {
+$(function () {
 
-	var heroCarousel = $('section#hero div.carousel');
-	heroCarousel.owlCarousel({
+	var $highlightsCarousel = $('section#highlights');
+	$highlightsCarousel.owlCarousel({
 		items: 1,
 		lazyLoad: true,
 		autoplay: true,
-		loop: true,
+		loop: false,
 		animateOut: 'fadeOut',
 		animateIn: 'fadeIn',
 		dots: true,
-		// nav: true,
-		navClass: ['owl-prev' , 'owl-next'],
+		nav: false,
+		navClass: ['owl-prev', 'owl-next'],
 		navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
 	});
 
-
-
-	var featuredPostsCarousel = $('#posts .posts__featured-carousel');
-
-	featuredPostsCarousel.owlCarousel({
-		items: 1,
-		lazyLoad: true,
-		autoplay: false,
-		loop: true,
-		animateOut: 'fadeOut',
-		animateIn: 'fadeIn',
-		dots: true,
+	var galleriesFromPosts = $('.post .gallery');
+	galleriesFromPosts.each(function () {
+		var $gallery = $(this);
+		var items = $gallery.is('[class*="gallery-columns-"') ? $gallery.attr('class').match(/gallery-columns-(\d+)/)[1] : 1;
+		$gallery.addClass('owl-carousel');
+		$gallery.children(':not(.gallery-item)').remove();
+		$gallery.find('.gallery-item .gallery-icon').each(function () {
+			var imageURL = $(this).find('img').attr('src');
+			$(this).append('<div class="blured-mask"></div>');
+			$(this).append('<div class="fake-img"></div>');
+			// $(this).css('background-image', 'url(' + imageURL + ')');
+			$(this).find('.blured-mask').css('background-image', 'url(' + imageURL + ')');
+			$(this).find('.fake-img').css('background-image', 'url(' + imageURL + ')');
+		});
+		$gallery.owlCarousel({
+			items: parseInt(items),
+			lazyLoad: true,
+			loop: false,
+			autoplay: true,
+			animateOut: 'fadeOut',
+			animateIn: 'fadeIn',
+			nav: true,
+			dots: false,
+			margin: 5,
+			navClass: ['owl-prev', 'owl-next'],
+			// navText: ['', ''],
+			navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+			responsive: {
+				0: {
+					items: 1,
+				},
+				768: {
+					items: parseInt(items),
+				}
+			}
+		});
 	});
-
-	var $sync1 = $(".post__carousel"),
-	$sync2 = $(".post__carousel-thumbs"),
-	flag = false,
-	duration = 300;
-
-	$sync1
-	.owlCarousel({
-		items: 1,
-		lazyLoad: true,
-		margin: 10,
-	})
-	.on('changed.owl.carousel', function (e) {
-		if (!flag) {
-			flag = true;
-			$sync2.trigger('to.owl.carousel', [e.item.index, duration, true]);
-			flag = false;
-		}
-	});
-
-	$sync2
-	.owlCarousel({
-		margin: 1,
-		// loop: true,
-		items: 6,
-		// center: true,
-	})
-	.on('click', '.owl-item', function () {
-		$sync1.trigger('to.owl.carousel', [$(this).index(), duration, true]);
-
-	})
-	.on('changed.owl.carousel', function (e) {
-		if (!flag) {
-			flag = true;
-			$sync1.trigger('to.owl.carousel', [e.item.index, duration, true]);
-			flag = false;
-		}
-	});
-
-	var wpCarousel = $('.gallery');
-
-	wpCarousel.find('br').remove();
-	wpCarousel.find('.gallery-item').each(function() {
-		img = $(this).find('img');
-		subtitle = img.attr('alt');
-		subtitleHtml = '<p class="gallery-title">' + subtitle + '<p>';
-
-		$(this).append(subtitleHtml);
-	});
-
-	wpCarousel.owlCarousel({
-		items: 1,
-		lazyLoad: true,
-		autoplay: true,
-		// loop: true,
-		animateOut: 'fadeOut',
-		animateIn: 'fadeIn',
-		// dots: true,
-		nav: true,
-		navClass: ['owl-prev' , 'owl-next'],
-		navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-	});
-}
-
-$(document).ready(function(){
-	engineCarousel();
-});
+})

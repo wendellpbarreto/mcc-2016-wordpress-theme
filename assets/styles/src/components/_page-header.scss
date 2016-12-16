@@ -1,0 +1,23 @@
+#page-header {
+	background-color: $blue;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 25px;
+	padding-bottom: 24px;
+	.page-title, .page-subtitle {
+		margin: 0;
+		padding: 0;
+		line-height: 1;
+	}
+	.page-title {
+		color: #fff;
+		font-weight: 700;
+		font-size: 40px;
+		text-transform: uppercase;
+	}
+	.page-subtitle {
+		color: #ecf0f1;
+		font-weight: 700;
+		font-size: 20px;
+	}
+}

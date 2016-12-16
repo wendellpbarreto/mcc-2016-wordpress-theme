@@ -29,72 +29,48 @@ $theme_config = array(
 			'slug' => 'home',
 		),
 		array(
-			'title' => 'Blog',
-			'slug' => 'blog',
-		),
-		array(
-			'title' => 'Histórico',
-			'slug' => 'historical',
-		),
-		array(
-			'title' => 'Histórico',
-			'slug' => 'historical',
-		),
-		array(
-			'title' => 'Setores',
-			'slug' => 'sectors',
-		),
-		array(
 			'title' => 'Equipe',
-			'slug' => 'team',
+			'slug' => 'equipe',
+		),
+		array(
+			'title' => 'Organograma',
+			'slug' => 'organograma',
+		),
+		array(
+			'title' => 'Histórico',
+			'slug' => 'historico',
 		),
 		array(
 			'title' => 'Pesquisa',
-			'slug' => 'research',
-		),
-		array(
-			'title' => 'Extensão',
-			'slug' => 'extension',
-		),
-		array(
-			'title' => 'Paleontologia',
-			'slug' => 'paleontology',
-		),
-		array(
-			'title' => 'Arqueologia',
-			'slug' => 'archeology',
+			'slug' => 'pesquisa',
 		),
 		array(
 			'title' => 'Etnologia',
-			'slug' => 'Ethnology',
+			'slug' => 'etnologia',
 		),
 		array(
-			'title' => 'Herbário',
-			'slug' => 'herbary',
+			'title' => 'Arqueologia',
+			'slug' => 'arqueologia',
 		),
 		array(
-			'title' => 'Exposições de Longa Duração',
-			'slug' => 'long-duration-expositions',
+			'title' => 'Paleontologia',
+			'slug' => 'paleontologia',
 		),
 		array(
 			'title' => 'Exposições Temporárias',
-			'slug' => 'temporary-expositions',
+			'slug' => 'exposicoes-temporarias',
 		),
 		array(
-			'title' => 'Localização e Contato',
-			'slug' => 'contact',
+			'title' => 'Exposições de Longa Duração',
+			'slug' => 'exposicoes-de-longa-duracao',
 		),
 		array(
-			'title' => 'Agende Sua Visita',
-			'slug' => 'schedule-your-visit',
+			'title' => 'Notícias',
+			'slug' => 'noticias',
 		),
 		array(
-			'title' => 'Parque da Ciência',
-			'slug' => 'science-park',
-		),
-		array(
-			'title' => 'Documentação e Memória',
-			'slug' => 'documentation-and-memory',
+			'title' => 'Contato',
+			'slug' => 'contato',
 		),
 	)
 );

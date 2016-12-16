@@ -20,15 +20,15 @@
         <meta name="twitter:creator" content="">
         <!-- scripts -->
         <script src="<?php echo get_assets_root_uri(); ?>/bower_components/modernizr/modernizr.js"></script>
+
         <!-- fonts -->
-        <link href='https://fonts.googleapis.com/css?family=Raleway:400,500,600,300' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-        
-        <link rel="stylesheet" href="<?php echo get_assets_root_uri(); ?>/fonts/icomoon/style.css">
-        <link rel="stylesheet" href="<?php echo get_assets_root_uri(); ?>/fonts/simple-line-icons/simple-line-icons.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+        <link rel="stylesheet" href="<?php echo get_assets_root_uri(); ?>/fonts/font-awesome/css/font-awesome.min.css">
+
         <!-- stylesheets::vendor -->
         <link rel="stylesheet" href="<?php echo get_assets_root_uri(); ?>/vendor/animate/animate.css">
         <link rel="stylesheet" href="<?php echo get_assets_root_uri(); ?>/vendor/owl.carousel/assets/owl.carousel.css">
+
         <!-- stylesheets::main -->
         <link rel="stylesheet" href="<?php echo get_assets_root_uri(); ?>/styles/main.css">
 	<!-- wordpress -->

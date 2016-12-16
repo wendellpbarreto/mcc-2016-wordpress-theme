@@ -1,115 +1,62 @@
+<?php get_header() ?>
+
 <?php
-	get_header();
-
-	the_post();
-	$current_post = get_post();
-	$current_post->permalink = get_permalink();
-	$current_post->categories = get_the_category();
-	$current_post->category = reset($current_post->categories);
-	$current_post->tags = wp_get_post_tags($current_post->ID);
-
-	$current_post->main_image = reset(rwmb_meta( 'main_image', 'type=image', $current_post->ID ));
-	$current_post->highlight_image = reset(rwmb_meta( 'highlight_image', 'type=image', $current_post->ID ));
-	$current_post->thumbnail = wp_get_attachment_url( get_post_thumbnail_id($current_post->ID) );
-
-	$current_page = get_page_by_path( 'blog' );
-    $current_page->image = wp_get_attachment_url( get_post_thumbnail_id($current_page->ID) );
-
-    if ( !empty($current_post->main_image) ) {
-    	$current_page->image = $current_post->main_image['full_url'];
-    } elseif ( !empty($current_post->highlight_image) ) {
-    	$current_page->image = $current_post->highlight_image['full_url'];
-    } elseif ( $current_post->thumbnail ) {
-    	$current_page->image = $current_post->thumbnail;
-    }
-
-	$current_page->image = aq_resize( $current_page->image, 2000, 800, true, true, true, false );
+$current_post = get_post();
+$current_post->categories = get_the_category();
+$current_post->category = reset($current_post->categories);
+$current_post->permalink = get_permalink();
+$current_post->date = get_the_date('d/m/Y');
+$current_post->thumbnail = wp_get_attachment_url(get_post_thumbnail_id($current_post->ID));
+$current_post->thumbnail_1600 = aq_resize($current_post->thumbnail, 1600, 1000, false, true, true, false);
 ?>
 
-<?php include 'includes/topbar.php' ?>
+<div class="page-wrapper">
+	<?php include 'includes/masthead.php' ?>
 
-<section id="hero" class="container" style="background-image: url(<?php echo $current_page->image ?>);">
-	<header class="hero__header">
-		<h1 class="hero__header-title white">Notícia</h1>
-		<hr class="hero__header-divider">
-	</header>
+	<div class="main-wrapper with-aside">
+		<header id="page-header">
+			<h1 class="page-title">Notícias</h1>
+		</header>
 
-</section>
-
-<div class="posts__wrapper aside__wrapper row">
-    <div id="posts" class="container small-20 medium-14 columns">
-        <article class="post row">
-		    <header class="post__header column">
-		        <div class="post__header-tag-wrapper">
-		            <h6 class="post__header-tag"><?php echo $current_post->category->name; ?></h6>
-		            <span class="post__header-line"></span>
-		        </div>
-		        <h3 class="post__header-title"><?php echo $current_post->post_title; ?></h3>
-		        <p class="post__header-text small">
-		            <?php echo $current_post->post_excerpt; ?>
-		        </p>
-		        <div class="post__header-meta">
-		            <p class="post__header-meta-time">
-		                <i class="icon-clock"></i> <?php echo date('j \d\e M/Y', strtotime($current_post->post_date)); ?>
-		            </p>
-		            <div class="post__header-meta-share">
-		                <div class="fb-share-button" data-href="<?php echo $current_post->permalink ?>" data-layout="button_count"></div>
-		                <a href="https://twitter.com/share" class="twitter-share-button" data-url="<?php echo $current_post->permalink ?>"></a>
-		            </div>
-		        </div>
-		    </header>
-		    <div class="post__text column">
-		        <?php echo apply_filters('the_content', $current_post->post_content); ?>
-		    </div>
-		    <!--  <div class="post__carousel column">
-				<?php foreach($current_post->attachments as $attachment) : ?>
-					<div class="post__carousel-item">
-						<img class="post__carousel-item-image owl-lazy img-responsive" data-src="<?php echo aq_resize( $attachment->guid, 1040, 500, true ); ?>" alt="<?php echo $attachment->post_title ?>">
-						<p class="post__carousel-item-title"><?php echo $attachment->post_title ?></p>
-						<p class="post__carousel-item-legend"><?php echo $attachment->post_excerpt ?></p>
+		<main>
+			<article class="post">
+				<header>
+					<p class="category"><?php echo $current_post->category->name; ?></p>
+					<h1 class="title"><?php echo $current_post->post_title; ?></h1>
+					<p class="date"><i class="fa fa-clock-o"></i> <?php echo $current_post->date; ?></p>
+				</header>
+				<?php if ($current_post->thumbnail) : ?>
+					<div class="thumbnail-wrapper">
+						<img class="thumbnail" src="<?php echo $current_post->thumbnail_1600 ? $current_post->thumbnail_1600 : $current_post->thumbnail ?>">
+						<p class="credits">
+							<?php if ($current_post->post_legend): ?>
+								<i class="fa fa-camera"></i>
+								<?php echo $current_post->post_legend ?> (Foto: <?php echo $current_post->post_credits ?>)
+							<?php elseif ($current_post->post_credits): ?>
+								<i class="fa fa-camera"></i>
+								Foto: <?php echo $current_post->post_credits ?>
+							<?php endif ?>
+						</p>
 					</div>
-				<?php endforeach ?>
-			</div>
-			<div class="post__carousel-thumbs column">
-				<?php foreach($current_post->attachments as $attachment) : ?>
-					<div class="post__carousel-item">
-						<img class="post__carousel-item-image" src="<?php echo aq_resize( $attachment->guid, 200, 100, true ); ?>" alt="<?php echo $attachment->post_title ?>">
-						<div class="post__carousel-item-hover">
-							<p class="post__carousel-item-hover-title"><?php echo $attachment->post_title ?></p>
-						</div>
-					</div>
-				<?php endforeach ?>
-			</div> -->
-		</article>
-    </div>
+				<?php endif ?>
+				<div class="content">
+					<?php echo apply_filters( 'the_content', $current_post->post_content ) ?>
+				</div>
+				<?php if($current_post->post_source): ?>
+					<p class="source">Fonte: <?php echo $current_post->post_source ?></p>
+				<?php endif ?>
+				<?php comments_template(); ?>
+			</article>
+		</main>
 
-    <aside id="aside" class="small-20 medium-6 columns">
-        <?php include TEMPLATEPATH.'/search.php'; ?>
-        <section class="aside__categories row">
-        	<div class="small-20 column">
-	            <header class="aside__categories-header">
-	                <h5 class="aside__categories-header-title">Categorias</h5>
-	                <span class="aside__categories-header-line"></span>
-	            </header>
-	            <ul class="aside__categories-list no-bullet">
-	                <?php $args = array( 'orderby' => 'name', 'order' => 'ASC' ); ?>
-	                <?php $categories = get_categories($args); ?>
-	                <?php foreach($categories as $category) : ?>
-	                    <li class="aside__categories-item"><h6 data-href="<?php echo get_category_link( $category->term_id ) ?>"><?php echo $category->name ?></h6></li>
-	                <?php endforeach; ?>
-	            </ul>
-            </div>
-        </section>
-    </aside>
+		<aside>
+			<?php include 'includes/aside/search.php' ?>
+			<?php include 'includes/aside/post-categories.php' ?>
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none">
+				<polygon points="0 10, 0 0, 100 0" />
+			</svg>
+		</aside>
+	</div>
 </div>
 
-<div class="page-gap"></div>
-
-<?php include 'includes/footer.php' ?>
-
 <?php get_footer() ?>
-
-<!-- scripts::animate -->
-<script>
-    new cbpScroller(document.getElementById('footer'));
-</script>

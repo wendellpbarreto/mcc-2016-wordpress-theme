@@ -1,0 +1,13 @@
+.btn {
+	line-height: 1;
+  padding: 15px 18px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: background-color .3s ease-in-out;
+}
+.btn.btn-blue {
+	background-color: $blue;
+	&:hover {
+		background-color: #2980b9;
+	}
+}

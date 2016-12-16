@@ -1,0 +1,56 @@
+figure.post {
+	margin: 40px 0;
+	padding: 0;
+	flex-basis: 45%;
+	background-color: #fff;
+	display: flex;
+	position: relative;
+
+	.fake-image {
+		@include aspect-ratio(1, 1);
+
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-image: url("../images/no-image.jpg");
+	}
+	.thumbnail-wrapper, figcaption {
+		flex-basis: 50%;
+	}
+	figcaption {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		.category, .title, .date {
+			flex-basis: 100%;
+			text-align: center;
+			margin: 0;
+		}
+		.title {
+			color: #2c3e50;
+			font-size: 19px;
+			font-weight: 800;
+			line-height: 1.3;
+			padding-left: 20px;
+			padding-right: 20px;
+			margin: 0;
+		}
+		.category {
+			margin-top: auto;
+			color: $blue;
+			text-transform: uppercase;
+			font-size: 14px;
+			font-weight: 700;
+		}
+		.date {
+			margin-bottom: auto;
+			font-size: 15px;
+			color: #95a5a6;
+		}
+	}
+	&:hover {
+
+	}
+}
+

@@ -5,3 +5,5 @@
 
 require 'functions/configs/autoload.php';
 require 'functions/content/widgets.php';
+
+require 'core/autoload.php';

@@ -6972,6 +6972,9 @@ img.aligncenter {
   margin-left: auto;
   margin-right: auto; }
 
+.sweet-alert fieldset input[type="text"] {
+  display: none !important; }
+
 .gallesry {
   background-color: #2c3e50;
   margin-bottom: 10px !important;
@@ -7054,35 +7057,35 @@ h5 {
 p.small {
   font-size: 14px; }
 
-form input[type="text"], form input[type="password"], form input[type="date"], form input[type="datetime"],
-form input[type="datetime-local"], form input[type="month"], form input[type="week"], form input[type="email"],
-form input[type="number"], form input[type="search"], form input[type="tel"], form input[type="time"], form input[type="url"], form textarea, form select {
+form.form input[type="text"], form.form input[type="password"], form.form input[type="date"], form.form input[type="datetime"],
+form.form input[type="datetime-local"], form.form input[type="month"], form.form input[type="week"], form.form input[type="email"],
+form.form input[type="number"], form.form input[type="search"], form.form input[type="tel"], form.form input[type="time"], form.form input[type="url"], form.form textarea, form.form select {
   border: 1px solid #3498db;
   color: #ffffff;
   background-color: #2c3e50;
   box-shadow: none; }
-  form input[type="text"]:focus, form input[type="password"]:focus, form input[type="date"]:focus, form input[type="datetime"]:focus,
-  form input[type="datetime-local"]:focus, form input[type="month"]:focus, form input[type="week"]:focus, form input[type="email"]:focus,
-  form input[type="number"]:focus, form input[type="search"]:focus, form input[type="tel"]:focus, form input[type="time"]:focus, form input[type="url"]:focus, form textarea:focus, form select:focus {
+  form.form input[type="text"]:focus, form.form input[type="password"]:focus, form.form input[type="date"]:focus, form.form input[type="datetime"]:focus,
+  form.form input[type="datetime-local"]:focus, form.form input[type="month"]:focus, form.form input[type="week"]:focus, form.form input[type="email"]:focus,
+  form.form input[type="number"]:focus, form.form input[type="search"]:focus, form.form input[type="tel"]:focus, form.form input[type="time"]:focus, form.form input[type="url"]:focus, form.form textarea:focus, form.form select:focus {
     box-shadow: none;
     background-color: #2c3e50;
     border-color: #3498db;
     outline: none;
     color: #ffffff; }
 
-form textarea {
+form.form textarea {
   resize: none; }
 
-form *::-webkit-input-placeholder {
+form.form *::-webkit-input-placeholder {
   color: #ffffff; }
 
-form *:-moz-placeholder {
+form.form *:-moz-placeholder {
   color: #ffffff; }
 
-form *::-moz-placeholder {
+form.form *::-moz-placeholder {
   color: #ffffff; }
 
-form *:-ms-input-placeholder {
+form.form *:-ms-input-placeholder {
   color: #ffffff; }
 
 .img-responsive {
@@ -7981,10 +7984,10 @@ nav.actions {
     .pagination a.current, .pagination a:hover, .pagination span.current, .pagination span:hover {
       background-color: #3498db; }
 
-form .form-group {
+form.form .form-group {
   padding-bottom: 20px; }
 
-form input[type=text], form input[type=email], form textarea {
+form.form input[type=text], form.form input[type=email], form.form textarea {
   background-color: #ffffff;
   padding: 23px 20px;
   font-size: 15px;
@@ -7992,11 +7995,11 @@ form input[type=text], form input[type=email], form textarea {
   margin: 0;
   color: #3498db;
   font-weight: 700; }
-  form input[type=text]:focus, form input[type=text]:hover, form input[type=text]:active, form input[type=email]:focus, form input[type=email]:hover, form input[type=email]:active, form textarea:focus, form textarea:hover, form textarea:active {
+  form.form input[type=text]:focus, form.form input[type=text]:hover, form.form input[type=text]:active, form.form input[type=email]:focus, form.form input[type=email]:hover, form.form input[type=email]:active, form.form textarea:focus, form.form textarea:hover, form.form textarea:active {
     background-color: #ecf0f1;
     color: #3498db; }
 
-form .btn {
+form.form .btn {
   background-color: #FFF;
   color: #3498db;
   padding: 20px;
@@ -8006,20 +8009,20 @@ form .btn {
   text-transform: uppercase;
   display: inline-block;
   border: 1px solid #3498db; }
-  form .btn:hover {
+  form.form .btn:hover {
     background-color: #3498db;
     color: #fff; }
 
-form *::-webkit-input-placeholder {
+form.form *::-webkit-input-placeholder {
   color: #879da9; }
 
-form *:-moz-placeholder {
+form.form *:-moz-placeholder {
   color: #879da9; }
 
-form *::-moz-placeholder {
+form.form *::-moz-placeholder {
   color: #879da9; }
 
-form *:-ms-input-placeholder {
+form.form *:-ms-input-placeholder {
   color: #879da9; }
 
 div.main-wrapper, div.main-wrapper.with-aside {

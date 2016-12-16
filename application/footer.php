@@ -1,8 +1,12 @@
         <!-- scripts::vendor -->
         <script src="<?php echo get_assets_root_uri(); ?>/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="<?php echo get_assets_root_uri(); ?>/bower_components/foundation/js/foundation.min.js"></script>
-        <script src="<?php echo get_assets_root_uri(); ?>/vendor/owl.carousel/owl.carousel.min.js"></script>
         <script src="<?php echo get_assets_root_uri(); ?>/vendor/classie/classie.js"></script>
+
+        <!-- libs@owl-carousel -->
+    	<link rel="stylesheet" href="<?php echo get_assets_root_uri(); ?>/vendor/owl.carousel/assets/owl.carousel.css">
+        <script src="<?php echo get_assets_root_uri(); ?>/vendor/owl.carousel/owl.carousel.min.js"></script>
+
 
         <?php wp_footer(); ?>
 

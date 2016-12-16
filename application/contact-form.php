@@ -6,7 +6,7 @@
         $mgClient = new Mailgun('key-aab9a47513cacc56683fcae13f1e6d0f');
         $domain = "sandboxd39b248c7bf94925a7180a6117193c70.mailgun.org";
         $from = "postmaster@sandboxd39b248c7bf94925a7180a6117193c70.mailgun.org";
-		$to = "assessoriamccufrn@gmail.com, wendellp.barreto@gmail.com";
+		$to = "assessoriamccufrn@gmail.com";
 
 		$fields = array(
 			array('Nome', 'person-name'),
@@ -14,7 +14,7 @@
 			array('Mensagem', 'message'),
 			);
 
-		$html = 'Este email foi enviado a partir do formulário de contato do Portal MCC UFRN.';
+		$html = 'Este email foi enviado a partir do formulário de contato do Portal MCC UFRN.<br><br>';
 
         foreach ($fields as $index=>$field) {
             if ($_POST[$field[1]] != '') {
@@ -22,7 +22,7 @@
             }
         }
 
-		$subject = 'Formulário de Contato #(' . $_POST['e-mail'] . ') | Portal MCC UFRN';
+		$subject = 'Formulário de Contato ' . $_POST['e-mail'] . ' | Portal MCC UFRN';
 
 		$result = $mgClient->sendMessage($domain, array('from' => $from, 'to' => $to, 'subject' => $subject, 'html' => $html));
 	}

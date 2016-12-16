@@ -3,10 +3,10 @@
     use Mailgun\Mailgun;
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $mgClient = new Mailgun('');
-        $domain = "";
-        $from = "assessoriamccufrn@gmail.com";
-        $to = "assessoriamccufrn@gmail.com";
+        $mgClient = new Mailgun('key-aab9a47513cacc56683fcae13f1e6d0f');
+        $domain = "sandboxd39b248c7bf94925a7180a6117193c70.mailgun.org";
+        $from = "postmaster@sandboxd39b248c7bf94925a7180a6117193c70.mailgun.org";
+        $to = "wendellp.barreto@gmail.com";
 
         $fields = array(
             array('Nome', 'person-name'),

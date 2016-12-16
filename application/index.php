@@ -28,7 +28,7 @@
 						$current_post->permalink = get_permalink();
 						$current_post->date = get_the_date( 'd/m/Y' );
 						$current_post->thumbnail = wp_get_attachment_url( get_post_thumbnail_id( $current_post->ID ) );
-						$current_page->thumbnail_400 = aq_resize($current_page->thumbnail, 400, 400, true, true, true, false);
+						$current_post->thumbnail_400 = aq_resize($current_post->thumbnail, 400, 400, true, true, true, false);
 				?>
 					<figure class="post tiny" data-href="<?php echo $current_post->permalink ?>">
 						<figcaption>

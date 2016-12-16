@@ -8339,12 +8339,12 @@ section#highlights {
       font-weight: 700;
       font-size: 70px;
       text-transform: uppercase;
-      letter-spacing: 1px; }
+      letter-spacing: 1px;
+      line-height: 1; }
     section#highlights .highlight .subtitle {
       text-transform: lowercase;
       font-size: 24px;
-      font-weight: 700;
-      margin-top: -15px; }
+      font-weight: 700; }
     section#highlights .highlight .btn {
       margin-top: 15px;
       display: inline-block; }

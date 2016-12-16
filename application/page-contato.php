@@ -5,7 +5,7 @@
 <div class="page-wrapper">
 	<?php include 'includes/masthead.php' ?>
 
-	<div class="main-wrapper">
+	<div class="main-wrapper with-aside">
 		<header id="page-header">
 			<h1 class="page-title"><?php echo $current_page->post_title ?></h1>
 		</header>

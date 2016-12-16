@@ -42,7 +42,7 @@
 	<script>
 		swal({
 			title: "Ops :(",
-			text: "Infelizmente ocorreu um erro no envio da sua mensagem, pedimos que tente novamente mais tarde ou envie um e-mail diretamente para sinmed@sinmedrn.org.br",
+			text: "Infelizmente ocorreu um erro no envio da sua mensagem, pedimos que tente novamente mais tarde ou envie um e-mail diretamente para assessoriamccufrn@gmail.com",
 			type: "error",
 			confirmButtonText: "Entendi!"
 		}

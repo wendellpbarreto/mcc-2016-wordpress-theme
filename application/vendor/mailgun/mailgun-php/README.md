@@ -22,12 +22,12 @@ composer and the Mailgun SDK.
 curl -sS https://getcomposer.org/installer | php
 
 # Add Mailgun as a dependency
-php composer.phar require mailgun/mailgun-php:~1.7
+php composer.phar require mailgun/mailgun-php:~1.7.1
 ``` 
 
 **For shared hosts without SSH access, check out our [Shared Host Instructions](SharedHostInstall.md).**
 
-**Rather just download the files? [Library Download](https://9f67cbbd1116d8afb399-7760483f5d1e5f28c2d253278a2a5045.ssl.cf2.rackcdn.com/mailgun-php-1.7.zip).**
+**Rather just download the files? [Library Download](https://9f67cbbd1116d8afb399-7760483f5d1e5f28c2d253278a2a5045.ssl.cf2.rackcdn.com/mailgun-php-1.7.1.zip).**
 
 Next, require Composer's autoloader, in your application, to automatically 
 load the Mailgun SDK in your project:
@@ -175,16 +175,6 @@ information about our API.
 If you find a bug, please submit the issue in Github directly. 
 [Mailgun-PHP Issues](https://github.com/mailgun/Mailgun-PHP/issues)
 
-As always, if you need additional assistance, drop us a note at 
-[support@mailgun.com](mailto:support@mailgun.com).
+As always, if you need additional assistance, drop us a note through your Control Panel at
+[https://mailgun.com/cp/support](https://mailgun.com/cp/support).
 
-Community Donations
--------------------
-
-This project supports community developers via http://tip4commit.com. If participating, developers will receive a Bitcoin tip for each commit that is merged to the master branch. 
-
-Note: Core developers, who receive a tip, will donate those tips back to the project's tip jar. This includes all Mailgun employees. While Mailgun sponsors this project, it does not accept or receive any tips.
-
-If you'd like to support the community, add Bitcoins to the tip jar: 1JnvwDXjGhbCSna8XQiPkwLw9WCvEAy1DH. 
-
-[![tip for next commit](http://tip4commit.com/projects/214.svg)](http://tip4commit.com/projects/214)

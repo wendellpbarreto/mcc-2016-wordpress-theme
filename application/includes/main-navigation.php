@@ -2,7 +2,7 @@
 
 <nav class="main-navigation">
 	<li class="has-dropdown <?php echo in_array($slug, array('equipe', 'organograma', 'historico')) ? 'active' : '' ?>">
-		<a href="javacript: void(0);">Institucional</a>
+		<a href="javascript: void(0);">Institucional</a>
 		<ul class="dropdown">
 			<li>
 				<a href="<?php echo get_permalink(get_page_by_path('equipe')) ?>">
@@ -23,7 +23,7 @@
 	</li>
 
 	<li class="has-dropdown <?php echo in_array($slug, array('etnologia', 'arqueologia', 'paleontologia')) ? 'active' : '' ?>">
-		<a href="javacript: void(0);">Acervo</a>
+		<a href="javascript: void(0);">Acervo</a>
 		<ul class="dropdown">
 			<li>
 				<a href="<?php echo get_permalink(get_page_by_path('etnologia')) ?>">
@@ -43,7 +43,7 @@
 		</ul>
 	</li>
 	<li class="has-dropdown <?php echo in_array($slug, array('exposicoes-temporarias', 'exposicoes-de-longa-duracao')) ? 'active' : '' ?>">
-		<a href="javacript: void(0);">Exposições</a>
+		<a href="javascript: void(0);">Exposições</a>
 		<ul class="dropdown">
 			<li>
 				<a href="<?php echo get_permalink(get_page_by_path('exposicoes-temporarias')) ?>">

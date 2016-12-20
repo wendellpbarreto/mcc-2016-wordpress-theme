@@ -13,7 +13,7 @@ $post_query = new WP_Query(array('post_type' => 'post', 'posts_per_page' => 4));
 		<main>
 			<?php $highlights = Highlight::get_posts(array('posts_per_page' => 6, 'thumbnail_sizes' => array('1800x963'), 'meta_query' => array(array('key' => 'post_is_active', 'value' => 1, 'compare' => '=')))) ?>
 			<?php if($highlights): ?>
-				<section id="highlights">
+				<section id="highlights" class="owl-carousel">
 					<?php foreach($highlights as $index=>$highlight): ?>
 						<?php if($highlight->thumbnail): ?>
 							<div class="highlight" style="background-image: url(<?php echo $highlight->thumbnail_sizes['1800x963'] ? $highlight->thumbnail_sizes['1800x963'] : $highlight->thumbnail ?>)">

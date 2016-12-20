@@ -4,8 +4,8 @@
         <script src="<?php echo get_assets_root_uri(); ?>/vendor/classie/classie.js"></script>
 
         <!-- libs@owl-carousel -->
-        <link rel="stylesheet" href="<?php echo get_assets_root_uri(); ?>/vendor/owl.carousel/assets/owl.carousel.css">
-        <script src="<?php echo get_assets_root_uri(); ?>/vendor/owl.carousel/owl.carousel.min.js"></script>
+        <link rel="stylesheet" href="<?php echo get_assets_root_uri(); ?>/bower_components/owl.carousel/dist/assets/owl.carousel.min.css" />
+		<script src="<?php echo get_assets_root_uri(); ?>/bower_components/owl.carousel/dist/owl.carousel.min.js"></script>
 
         <?php wp_footer(); ?>
 

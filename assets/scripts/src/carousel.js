@@ -17,7 +17,7 @@ $(function () {
 	var galleriesFromPosts = $('.post .gallery');
 	galleriesFromPosts.each(function () {
 		var $gallery = $(this);
-		var items = $gallery.is('[class*="gallery-columns-"') ? $gallery.attr('class').match(/gallery-columns-(\d+)/)[1] : 1;
+		// var items = $gallery.is('[class*="gallery-columns-"') ? $gallery.attr('class').match(/gallery-columns-(\d+)/)[1] : 1;
 		$gallery.addClass('owl-carousel');
 		$gallery.children(':not(.gallery-item)').remove();
 		$gallery.find('.gallery-item .gallery-icon').each(function () {
@@ -29,7 +29,8 @@ $(function () {
 			$(this).find('.fake-img').css('background-image', 'url(' + imageURL + ')');
 		});
 		$gallery.owlCarousel({
-			items: parseInt(items),
+			// items: parseInt(items),
+			items: 1,
 			lazyLoad: true,
 			loop: false,
 			autoplay: true,
@@ -46,7 +47,8 @@ $(function () {
 					items: 1,
 				},
 				768: {
-					items: parseInt(items),
+					// items: parseInt(items),
+					items: 1,
 				}
 			}
 		});

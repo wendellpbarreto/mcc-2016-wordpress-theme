@@ -41,10 +41,6 @@ $theme_config = array(
 			'slug' => 'historico',
 		),
 		array(
-			'title' => 'Pesquisa',
-			'slug' => 'pesquisa',
-		),
-		array(
 			'title' => 'Etnologia',
 			'slug' => 'etnologia',
 		),
@@ -67,6 +63,10 @@ $theme_config = array(
 		array(
 			'title' => 'Notícias',
 			'slug' => 'noticias',
+		),
+		array(
+			'title' => 'Agende sua Visita',
+			'slug' => 'agende-sua-visita',
 		),
 		array(
 			'title' => 'Contato',

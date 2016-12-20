@@ -21,9 +21,7 @@
 			</li>
 		</ul>
 	</li>
-	<li class="<?php echo $slug == 'pesquisa' ? 'active' : '' ?>">
-		<a href="<?php echo get_permalink(get_page_by_path('pesquisa')) ?>">Pesquisa</a>
-	</li>
+
 	<li class="has-dropdown <?php echo in_array($slug, array('etnologia', 'arqueologia', 'paleontologia')) ? 'active' : '' ?>">
 		<a href="javacript: void(0);">Acervo</a>
 		<ul class="dropdown">
@@ -61,5 +59,8 @@
 	</li>
 	<li class="<?php echo is_home() || is_single() ? 'active' : '' ?>">
 		<a href="<?php echo get_permalink(get_page_by_path('noticias')) ?>">Notícias</a>
+	</li>
+	<li class="<?php echo $slug == 'agende-sua-visita' ? 'active' : '' ?>">
+		<a href="<?php echo get_permalink(get_page_by_path('agende-sua-visita')) ?>">Agende Sua Visita</a>
 	</li>
 </nav>

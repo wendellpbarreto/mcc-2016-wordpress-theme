@@ -8025,6 +8025,33 @@ form.form *::-moz-placeholder {
 form.form *:-ms-input-placeholder {
   color: #879da9; }
 
+.modal {
+  display: none;
+  position: absolute;
+  top: 20%;
+  z-index: 200;
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+  left: 0;
+  right: 0;
+  padding-left: 10px;
+  padding-right: 10px; }
+  .modal .modal-inner {
+    min-height: 400px;
+    padding: 50px 20px 40px;
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    position: relative; }
+  .modal .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px; }
+
 div.main-wrapper, div.main-wrapper.with-aside {
   box-sizing: border-box;
   display: -webkit-box;
@@ -8486,3 +8513,279 @@ section#map {
 
 section#posts {
   padding: 52px 20px 20px; }
+
+.page-wrapper {
+  overflow: hidden; }
+
+.hotsite, .hotsite h1, .hotsite h2, .hotsite h3, .hotsite h4, .hotsite h5, .hotsite h6, .hotsite p, .hotsite ul li, .hotsite a {
+  font-family: 'Roboto', sans-serif; }
+
+.hotsite section#hero {
+  max-width: 100%;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 56.84211%;
+  width: 100%;
+  min-height: 400px;
+  position: relative;
+  background-position: left top;
+  background-repeat: no-repeat; }
+  .hotsite section#hero .hero-inner {
+    max-width: 1200px;
+    margin: auto;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    padding-left: 10px;
+    padding-right: 10px; }
+  .hotsite section#hero .title {
+    color: #320000;
+    text-transform: uppercase;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: justify;
+    width: 550px; }
+
+.hotsite h1.strip {
+  width: 100%;
+  background-color: #fff;
+  font-size: 27px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #320000;
+  text-align: center;
+  padding: 23px 10px;
+  line-height: 1;
+  margin: 0;
+  letter-spacing: 0.05rem; }
+
+.hotsite section.section {
+  max-width: 100%;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 26.31579%;
+  width: 100%;
+  min-height: 450px;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat; }
+  .hotsite section.section .section-inner {
+    max-width: 1200px;
+    margin: auto;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    padding-left: 10px;
+    padding-right: 10px; }
+  .hotsite section.section header.section-header {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    padding: 10px;
+    max-width: 550px; }
+    .hotsite section.section header.section-header .section-title {
+      color: #fff;
+      font-size: 22px;
+      font-weight: 600;
+      text-transform: uppercase;
+      line-height: 1.3;
+      text-shadow: 0 0 3px #320000;
+      letter-spacing: 0.04rem; }
+    .hotsite section.section header.section-header .section-quote {
+      color: #fff;
+      font-size: 22px;
+      font-weight: 600;
+      text-transform: uppercase;
+      line-height: 1.4;
+      text-shadow: 0 0 1px #fff; }
+      .hotsite section.section header.section-header .section-quote .author {
+        display: block;
+        text-align: right;
+        font-size: 17px; }
+    .hotsite section.section header.section-header .buttons {
+      margin-top: 20px;
+      text-align: center; }
+
+.hotsite section.section.section-center header.section-header {
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  text-align: center; }
+
+.hotsite section.section.section-right header.section-header {
+  left: initial;
+  right: 0; }
+
+.hotsite section.section.section-top-right header.section-header {
+  top: 0;
+  right: 0;
+  -webkit-transform: none;
+          transform: none; }
+
+.hotsite .btn.btn-outline {
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0.03rem;
+  display: inline-block; }
+  .hotsite .btn.btn-outline:hover {
+    background-color: #fff;
+    color: #320000; }
+
+.hotsite .btn.btn-wine.btn-outline {
+  border-color: #320000;
+  color: #320000; }
+  .hotsite .btn.btn-wine.btn-outline:hover {
+    background-color: #320000;
+    color: #fff; }
+
+.hotsite .btn.btn-green.btn-outline {
+  border-color: #213812;
+  color: #213812; }
+  .hotsite .btn.btn-green.btn-outline:hover {
+    background-color: #213812;
+    color: #fff; }
+
+.hotsite footer .white-strip {
+  background-color: #FFF;
+  color: #000; }
+
+.hotsite footer .black-strip {
+  background-color: #181818;
+  color: #fff; }
+
+.hotsite footer .footer-inner {
+  max-width: 1200px;
+  margin: auto;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+  .hotsite footer .footer-inner p {
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: 25px;
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-family: 'Roboto Condensed';
+    vertical-align: middle; }
+
+.hotsite footer .supporters p, .hotsite footer .supporters a, .hotsite footer .supporters a img {
+  vertical-align: middle;
+  display: inline-block; }
+
+.hotsite footer .supporters a {
+  margin-left: 15px; }
+
+.hotsite footer .supporters a img {
+  height: 25px; }
+
+.hotsite footer nav {
+  max-width: 1200px;
+  margin: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  list-style: none; }
+  .hotsite footer nav li {
+    display: inline-block; }
+    .hotsite footer nav li > a, .hotsite footer nav li > p {
+      padding: 14px;
+      font-size: 22px;
+      color: #fff;
+      text-transform: uppercase;
+      font-family: 'Roboto Condensed';
+      display: inline-block;
+      line-height: 30px;
+      vertical-align: middle;
+      margin: 0;
+      font-weight: 600;
+      line-height: 22px; }
+    .hotsite footer nav li a:hover {
+      color: #cecece; }
+  .hotsite footer nav li.current p {
+    padding: 15px 80px;
+    margin-top: -7px;
+    background-color: #000;
+    font-size: 28px;
+    line-height: 28px; }
+  .hotsite footer nav li:first-child a {
+    padding-left: 0; }
+  .hotsite footer nav li:last-child a {
+    padding-right: 0; }
+
+.hotsite.engenhos section#hero {
+  background-image: url("../images/engenhos/bg@hero.png"); }
+
+.hotsite.engenhos section#section-1 {
+  background-image: url("../images/engenhos/bg@section-1.png"); }
+
+.hotsite.engenhos section#section-2 {
+  background-image: url("../images/engenhos/bg@section-2.png"); }
+  .hotsite.engenhos section#section-2 header.section-header {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 30px 20px; }
+    .hotsite.engenhos section#section-2 header.section-header .section-quote {
+      color: #213812;
+      text-align: center; }
+
+.hotsite.engenhos section#section-3 {
+  background-image: url("../images/engenhos/bg@section-3.png"); }
+
+.hotsite.engenhos section#section-4 {
+  background-image: url("../images/engenhos/bg@section-4.png"); }
+
+.hotsite.engenhos section#section-5 {
+  background-image: url("../images/engenhos/bg@section-5.png");
+  background-position: right top;
+  min-height: 700px; }
+  .hotsite.engenhos section#section-5 header.section-header .section-title {
+    text-align: right;
+    color: #320000;
+    text-shadow: 0 0 3px #fff;
+    font-size: 32px; }
+  .hotsite.engenhos section#section-5 header.section-header .buttons {
+    text-align: right; }

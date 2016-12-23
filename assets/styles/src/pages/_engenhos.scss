@@ -1,0 +1,43 @@
+
+.hotsite.engenhos {
+	section#hero {
+		background-image: url("../images/engenhos/bg@hero.png");
+	}
+
+	section#section-1 {
+		background-image: url("../images/engenhos/bg@section-1.png");
+	}
+	section#section-2 {
+		background-image: url("../images/engenhos/bg@section-2.png");
+		header.section-header {
+			background-color: rgba(255, 255, 255, 0.6);
+			padding: 30px 20px;
+			.section-quote {
+				color: #213812;
+				text-align: center;
+			}
+		}
+	}
+	section#section-3 {
+		background-image: url("../images/engenhos/bg@section-3.png");
+	}
+	section#section-4 {
+		background-image: url("../images/engenhos/bg@section-4.png");
+	}
+	section#section-5 {
+		background-image: url("../images/engenhos/bg@section-5.png");
+		background-position: right top;
+		min-height: 700px;
+		header.section-header {
+			.section-title {
+				text-align: right;
+				color: $c-wine;
+				text-shadow: 0 0 3px #fff;
+				font-size: 32px;
+			}
+			.buttons {
+				text-align: right;
+			}
+		}
+	}
+}

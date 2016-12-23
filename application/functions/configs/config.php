@@ -69,6 +69,30 @@ $theme_config = array(
 			'slug' => 'agende-sua-visita',
 		),
 		array(
+			'title' => 'Engenhos',
+			'slug' => 'engenhos',
+		),
+		array(
+			'title' => 'Engenhos - 1º Seção (Um mundo ávido por açucar...)',
+			'slug' => 'engenhos-1',
+		),
+		array(
+			'title' => 'Engenhos - 2º Seção (O canavial hoje tão nosso...)',
+			'slug' => 'engenhos-2',
+		),
+		array(
+			'title' => 'Engenhos - 3º Seção (Embora o termo engenho nomeie...)',
+			'slug' => 'engenhos-3',
+		),
+		array(
+			'title' => 'Engenhos - 4º Seção (Ceará-Mirim: E os caminhos do acuçar...)',
+			'slug' => 'engenhos-4',
+		),
+		array(
+			'title' => 'Anatomia Comparada',
+			'slug' => 'anatomia-comparada',
+		),
+		array(
 			'title' => 'Contato',
 			'slug' => 'contato',
 		),

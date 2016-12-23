@@ -1,6 +1,7 @@
 		<!-- secondary fonts -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
 
 		<!-- scripts::vendor -->
 		<script src="<?php echo get_assets_root_uri(); ?>/bower_components/jquery/dist/jquery.min.js"></script>

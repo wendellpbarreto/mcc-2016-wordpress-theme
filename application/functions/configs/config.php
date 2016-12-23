@@ -93,6 +93,30 @@ $theme_config = array(
 			'slug' => 'anatomia-comparada',
 		),
 		array(
+			'title' => 'Anatomia Comparada - 1º Seção (Esqueletos)',
+			'slug' => 'anatomia-comparada-1',
+		),
+		array(
+			'title' => 'Anatomia Comparada - 2º Seção (O Elefante)',
+			'slug' => 'anatomia-comparada-2',
+		),
+		array(
+			'title' => 'Anatomia Comparada - 3º Seção (Você conhece um carnívoro?)',
+			'slug' => 'anatomia-comparada-3-1',
+		),
+		array(
+			'title' => 'Anatomia Comparada - 3º Seção (Nós: Primatas)',
+			'slug' => 'anatomia-comparada-3-2',
+		),
+		array(
+			'title' => 'Anatomia Comparada - 3º Seção (Animais de Casco)',
+			'slug' => 'anatomia-comparada-3-3',
+		),
+		array(
+			'title' => 'Anatomia Comparada - 4º Seção (Baleias)',
+			'slug' => 'anatomia-comparada-4',
+		),
+		array(
 			'title' => 'Contato',
 			'slug' => 'contato',
 		),

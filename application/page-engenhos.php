@@ -6,17 +6,17 @@
 	<section id="hero">
 		<div class="hero-inner">
 			<h1 class="title">
-				Como uma planta se espalhou pelo mundo, infuenciou a organização de sociedades, construiu cidades e se faz presente até hoje na nossa cultura de forma tão íntima como tomar um cafezinho adoçado com a sacarose da cana-de-açucar? Encontre as respostas na exposição Engenhos: Tradição do Açucar.
+				Como uma planta se espalhou pelo mundo, infuenciou a organização de sociedades, construiu cidades e se faz presente até hoje na nossa cultura de forma tão íntima como tomar um cafezinho adoçado com a sacarose da cana-de-açúcar? Encontre as respostas na exposição Engenhos: Tradição do Açúcar.
 			</h1>
 		</div>
 	</section>
 
-	<h1 class="strip">Engenhos: Tradição do Açucar</h1>
+	<h1 class="strip">Engenhos: Tradição do Açúcar</h1>
 
 	<section id="section-1" class="section">
 		<div class="section-inner">
 			<header class="section-header">
-				<h1 class="section-title">Um mundo ávido por açucar...</h1>
+				<h1 class="section-title">Um mundo ávido por açúcar...</h1>
 				<nav class="buttons">
 					<a href="#" class="btn btn-outline" data-toggle="modal" data-target="#section-1-modal">+ Saiba mais</a>
 				</nav>
@@ -59,7 +59,7 @@
 	<section id="section-3" class="section section-center">
 		<div class="section-inner">
 			<header class="section-header">
-				<h1 class="section-title">Embora o termo Engenho nomeie especificamente a moenda da cana-de-açucar, por extensão, ele passou a designar a grande propriedade rural destinada à cultura canavieira.</h1>
+				<h1 class="section-title">Embora o termo Engenho nomeie especificamente a moenda da cana-de-açúcar, por extensão, ele passou a designar a grande propriedade rural destinada à cultura canavieira.</h1>
 				<nav class="buttons">
 					<a href="#" class="btn btn-outline" data-toggle="modal" data-target="#section-3-modal">+ Saiba mais</a>
 				</nav>
@@ -90,7 +90,7 @@
 	<section id="section-5" class="section section-top-right">
 		<div class="section-inner">
 			<header class="section-header">
-				<h1 class="section-title">Ceará-Mirim e os caminhos do açucar: Patrimônio ameaçado</h1>
+				<h1 class="section-title">Ceará-Mirim e os caminhos do açúcar: Patrimônio ameaçado</h1>
 				<nav class="buttons">
 					<a href="#" class="btn btn-wine btn-outline" data-toggle="modal" data-target="#section-4-modal">+ Saiba mais</a>
 				</nav>
@@ -110,7 +110,7 @@
 	<footer>
 		<div class="white-strip">
 			<div class="footer-inner">
-				<p class="title">Engenhos: Tradição do Açucar</p>
+				<p class="title">Engenhos: Tradição do Açúcar</p>
 				<div class="supporters">
 					<p>APOIO: </p>
 					<a href="http://ufrn.br/" target="_blank">

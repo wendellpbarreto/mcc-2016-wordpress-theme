@@ -8531,7 +8531,7 @@ section#posts {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding-bottom: 56.84211%;
+  padding-bottom: 51.57895%;
   width: 100%;
   min-height: 500px;
   position: relative;
@@ -8565,7 +8565,7 @@ section#posts {
     font-weight: 600;
     line-height: 1.5;
     text-align: justify;
-    width: 550px; }
+    max-width: 550px; }
   @media screen and (min-width: 768px) {
     .hotsite section#hero {
       min-height: 400px; }
@@ -8601,6 +8601,7 @@ section#posts {
   min-height: 450px;
   position: relative;
   background-position: center;
+  background-attachment: cover;
   background-repeat: no-repeat; }
   .hotsite section.section .section-inner {
     max-width: 1200px;
@@ -8609,12 +8610,56 @@ section#posts {
     position: absolute;
     top: 0;
     bottom: 0;
+    right: 0;
+    left: 0;
     width: 100%;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
     padding-left: 10px;
     padding-right: 10px; }
+  .hotsite section.section .section-columns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .hotsite section.section .section-columns .section-column {
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+      margin-top: 30px;
+      padding: 0 30px; }
+    .hotsite section.section .section-columns .column-title {
+      color: #fff;
+      font-size: 28px;
+      text-transform: uppercase;
+      font-weight: 600;
+      height: 90px;
+      vertical-align: bottom;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: end;
+          -ms-flex-align: end;
+              align-items: flex-end;
+      position: relative;
+      padding-bottom: 5px; }
+      .hotsite section.section .section-columns .column-title:after {
+        height: 1px;
+        width: 100px;
+        background-color: #fff;
+        display: block;
+        content: " ";
+        position: absolute;
+        bottom: -1px; }
+    .hotsite section.section .section-columns img {
+      max-width: 100%;
+      margin-top: 20px;
+      margin-bottom: 20px; }
+    .hotsite section.section .section-columns .column-desc {
+      color: #fff;
+      font-size: 19px;
+      font-weight: 600; }
   .hotsite section.section header.section-header {
     position: absolute;
     top: 50%;
@@ -8622,6 +8667,14 @@ section#posts {
             transform: translateY(-50%);
     padding: 10px;
     max-width: 550px; }
+    .hotsite section.section header.section-header .section-bigtitle {
+      color: #fff;
+      font-size: 50px;
+      font-weight: 600;
+      text-transform: uppercase;
+      line-height: 1.3;
+      text-shadow: 0 0 3px #320000;
+      letter-spacing: 0.04rem; }
     .hotsite section.section header.section-header .section-title {
       color: #fff;
       font-size: 22px;
@@ -8645,8 +8698,21 @@ section#posts {
       margin-top: 20px;
       text-align: center; }
   @media screen and (min-width: 768px) {
-    .hotsite section.section header.section-header .title {
+    .hotsite section.section .section-columns .section-column {
+      -ms-flex-preferred-size: 33%;
+          flex-basis: 33%; }
+    .hotsite section.section header.section-header .section-bigtitle {
+      font-size: 80px; }
+    .hotsite section.section header.section-header .section-title {
       font-size: 22px; } }
+
+.hotsite section.section.section-top-left header.section-header {
+  top: 0;
+  left: 0;
+  right: initial;
+  bottom: initial;
+  -webkit-transform: none;
+          transform: none; }
 
 .hotsite section.section.section-center header.section-header {
   text-align: center; }
@@ -8666,7 +8732,7 @@ section#posts {
   -webkit-transform: none;
           transform: none; }
 
-.hotsite .btn.btn-outline {
+.hotsite .btn {
   background: transparent;
   border: 2px solid #fff;
   border-radius: 5px;
@@ -8677,7 +8743,7 @@ section#posts {
   color: #fff;
   letter-spacing: 0.03rem;
   display: inline-block; }
-  .hotsite .btn.btn-outline:hover {
+  .hotsite .btn:hover {
     background-color: #fff;
     color: #320000; }
 
@@ -8693,6 +8759,35 @@ section#posts {
   color: #213812; }
   .hotsite .btn.btn-green.btn-outline:hover {
     background-color: #213812;
+    color: #fff; }
+
+.hotsite .btn.btn-white.btn-outline {
+  border-color: #fff;
+  color: #fff; }
+  .hotsite .btn.btn-white.btn-outline:hover {
+    background-color: #fff;
+    color: #000; }
+
+.hotsite .btn.btn-black.btn-outline {
+  border-color: #000;
+  color: #000; }
+  .hotsite .btn.btn-black.btn-outline:hover {
+    background-color: #000;
+    color: #fff; }
+
+.hotsite .btn.btn-dark-blue {
+  border-color: #01123e;
+  color: #fff;
+  background-color: #01123e; }
+  .hotsite .btn.btn-dark-blue:hover {
+    color: #01123e;
+    background-color: rgba(255, 255, 255, 0.5); }
+
+.hotsite .btn.btn-dark-blue.btn-outline {
+  border-color: #01123e;
+  color: #01123e; }
+  .hotsite .btn.btn-dark-blue.btn-outline:hover {
+    background-color: #01123e;
     color: #fff; }
 
 .hotsite footer .white-strip {
@@ -8825,3 +8920,81 @@ section#posts {
     font-size: 32px; }
   .hotsite.engenhos section#section-5 header.section-header .buttons {
     text-align: right; }
+
+.hotsite.anatomia-comparada, .hotsite.anatomia-comparada h1, .hotsite.anatomia-comparada h2, .hotsite.anatomia-comparada h3, .hotsite.anatomia-comparada h4, .hotsite.anatomia-comparada h5, .hotsite.anatomia-comparada h6, .hotsite.anatomia-comparada p, .hotsite.anatomia-comparada ul li, .hotsite.anatomia-comparada a {
+  font-family: 'PT Sans', sans-serif; }
+
+.hotsite.anatomia-comparada .btn {
+  font-weight: 600; }
+
+.hotsite.anatomia-comparada section#hero {
+  background-image: url("../images/anatomia-comparada/bg@hero.png");
+  background-position: left top; }
+  .hotsite.anatomia-comparada section#hero .hero-inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+  .hotsite.anatomia-comparada section#hero .logo {
+    max-width: 550px; }
+    .hotsite.anatomia-comparada section#hero .logo img {
+      width: 100%;
+      padding: 60px 10px 10px; }
+  .hotsite.anatomia-comparada section#hero .title {
+    background: #000;
+    color: #fff; }
+
+.hotsite.anatomia-comparada .strip {
+  color: #000; }
+
+.hotsite.anatomia-comparada section#section-1 {
+  background-image: url("../images/anatomia-comparada/bg@section-1.png");
+  background-position: center top;
+  min-height: 700px; }
+  .hotsite.anatomia-comparada section#section-1 header.section-header {
+    padding-top: 40px; }
+    .hotsite.anatomia-comparada section#section-1 header.section-header .buttons {
+      text-align: left; }
+  @media screen and (min-width: 768px) {
+    .hotsite.anatomia-comparada section#section-1 header.section-header .section-title {
+      font-size: 35px; } }
+
+.hotsite.anatomia-comparada section#section-2 {
+  background-image: url("../images/anatomia-comparada/bg@section-2.png"); }
+  .hotsite.anatomia-comparada section#section-2 header.section-header {
+    text-align: center; }
+    .hotsite.anatomia-comparada section#section-2 header.section-header .section-title, .hotsite.anatomia-comparada section#section-2 header.section-header .section-bigtitle {
+      color: #01123e;
+      text-shadow: 0 0 1px #fff; }
+    .hotsite.anatomia-comparada section#section-2 header.section-header .section-title {
+      font-size: 30px; }
+
+.hotsite.anatomia-comparada section#section-3 {
+  background-image: url("../images/anatomia-comparada/bg@section-3.png");
+  min-height: 600px;
+  position: relative;
+  padding-bottom: 60px; }
+  .hotsite.anatomia-comparada section#section-3 .section-inner {
+    position: relative; }
+
+.hotsite.anatomia-comparada section#section-4 {
+  background-image: url("../images/anatomia-comparada/bg@section-4.png");
+  min-height: 700px;
+  background-position: center top; }
+  .hotsite.anatomia-comparada section#section-4 .section-header {
+    padding-top: 30px; }
+    .hotsite.anatomia-comparada section#section-4 .section-header .section-title, .hotsite.anatomia-comparada section#section-4 .section-header .section-bigtitle {
+      color: #000;
+      text-shadow: none; }
+    .hotsite.anatomia-comparada section#section-4 .section-header .section-bigtitle {
+      font-weight: 500;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      line-height: 1; }
+    .hotsite.anatomia-comparada section#section-4 .section-header .section-title {
+      font-size: 30px; }
+    .hotsite.anatomia-comparada section#section-4 .section-header .buttons {
+      text-align: left; }

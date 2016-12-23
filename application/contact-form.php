@@ -52,7 +52,7 @@
 
 <form id="contact-form" action="" method="post" class="form validate-this-form">
 	<header>
-		<p>Preenchar o formário abaixo e envie sua mensagem pra gente!</p>
+		<p>Preencha o formário abaixo e envie sua mensagem pra gente!</p>
 	</header>
 
 	<div class="form-group">

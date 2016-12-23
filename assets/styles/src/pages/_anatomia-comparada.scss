@@ -1,0 +1,110 @@
+.hotsite.anatomia-comparada {
+	&, h1, h2, h3, h4, h5, h6, p, ul li, a {
+		font-family: 'PT Sans', sans-serif;
+	}
+
+	.btn {
+		font-weight: 600;
+	}
+
+	section#hero {
+		background-image: url("../images/anatomia-comparada/bg@hero.png");
+		background-position: left top;
+
+		.hero-inner {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+		.logo {
+			max-width: 550px;
+			img {
+				width: 100%;
+				padding: 60px 10px 10px;;
+			}
+		}
+		.title {
+			background: #000;
+			color: #fff;
+		}
+	}
+
+	.strip {
+		color: #000;
+	}
+
+	section#section-1 {
+		background-image: url("../images/anatomia-comparada/bg@section-1.png");
+
+		background-position: center top;
+		min-height: 700px;
+		header.section-header {
+			padding-top: 40px;
+			.section-title {
+			}
+			.buttons {
+				text-align: left;
+			}
+		}
+		@media screen and (min-width: 768px) {
+			header.section-header {
+				.section-title {
+					font-size: 35px;
+				}
+			}
+		}
+	}
+	section#section-2 {
+		background-image: url("../images/anatomia-comparada/bg@section-2.png");
+
+		header.section-header {
+			text-align: center;
+			.section-title, .section-bigtitle {
+				color: #01123e;
+				text-shadow: 0 0 1px #fff;
+			}
+			.section-title {
+				font-size: 30px;
+			}
+			.buttons {
+				.btn {
+				}
+			}
+		}
+	}
+	section#section-3 {
+		background-image: url("../images/anatomia-comparada/bg@section-3.png");
+
+		min-height: 600px;
+		position: relative;
+		padding-bottom: 60px;
+		.section-inner {
+			position: relative;
+		}
+	}
+	section#section-4 {
+		background-image: url("../images/anatomia-comparada/bg@section-4.png");
+
+		min-height: 700px;
+		background-position: center top;
+
+		.section-header {
+			padding-top: 30px;
+			.section-title, .section-bigtitle {
+				color: #000;
+				text-shadow: none;
+			}
+			.section-bigtitle {
+				font-weight: 500;
+				margin-bottom: 0;
+				padding-bottom: 0;
+				line-height: 1;
+			}
+			.section-title {
+				font-size: 30px;
+			}
+			.buttons {
+				text-align: left;
+			}
+		}
+	}
+}
